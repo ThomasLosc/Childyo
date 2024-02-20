@@ -1,3 +1,11 @@
+# Childyo
+
+- PHILIPPE Aurore
+- LOUGSARI Chaimaa
+- BLONDIN Thomas
+- DAVROULT Armand
+
+
 # Sujet 4 : Gestion de calendrier médical
 
 <aside>
@@ -29,14 +37,6 @@ L'agence sélectionnée sera responsable de l'ensemble du projet, de la concepti
 ### Communication & reporting.
 
 Une communication transparente et régulière est essentielle pour le succès de ce projet. Des outils de gestion de projet comme Trello ou Microsoft Teams seront utilisés pour un suivi efficace. Des réunions hebdomadaires seront organisées pour évaluer les progrès, discuter des problèmes et ajuster les plans si nécessaire. Des rapports d'étape détaillés doivent être fournis régulièrement, comprenant les réalisations, les défis rencontrés, et les prochaines étapes. Cette communication doit assurer que le projet progresse conformément à nos attentes en termes de fonctionnalités, de sécurité et de conformité aux normes HDS.
-
-
-# Childyo
-
-- PHILIPPE Aurore
-- LOUGSARI Chaimaa
-- BLONDIN Thomas
-- DAVROULT Armand
 
 # Persona client
 
