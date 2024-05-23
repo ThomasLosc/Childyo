@@ -2,6 +2,13 @@
 
 {% block body %}
 {{ include('header/header.html.twig') }}
+    {% if app.user %}
+        <div class="container">
+            <a href="{{ path('app_dashboard') }}" class="btn btn-info w-25 justify-content-center fw-bold mt-3 d-flex align-items-center"><i class="bi bi-arrow-left me-3 fs-5"></i>
+                Revenir au tableau de bord
+            </a>
+        </div>
+    {% endif %}
     <div class="container mt-5 mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1">
         <div class="container">
             <h2 class="text-center fw-bold">
