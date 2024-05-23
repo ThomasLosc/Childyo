@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <div class="container-register m-auto  mt-5">
+        <h1 class="text-center text-blue fw-bold">Inscrivez-vous sur Childyo !</h1>
+    </div>
+    {{ form_start(registrationForm) }}
+    <div class="container-fluid w-50 m-auto">
+    {{ form_errors(registrationForm) }}
+    {% for flash_error in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+    {% endfor %}
+        <div class="row mt-5">
+            <div class="col-md-6 col-12 form-group-custom">
+                {{ form_row(registrationForm.nom) }}
+            </div>
+            <div class="col-md-6 col-12 form-group-custom">
+                {{ form_row(registrationForm.prenom) }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 form-group-custom">
+                {{ form_row(registrationForm.telephone) }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 form-group-custom">
+                {{ form_row(registrationForm.email) }}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-6 col-12 form-group-custom">
+                {{ form_row(registrationForm.plainPassword.first) }}
+            </div>
+            <div class="col-md-6 col-12 form-group-custom">
+                {{ form_row(registrationForm.plainPassword.second) }}
+            </div>
+        </div>
+        <div class="w-50 m-auto mt-4">
+            <button type="submit" class="btn btn-info w-100 fw-bold">Créer un compte</button>
+        </div>
+        <div class="mt-4 w-75 m-auto text-center mb-5">
+            <span>J'ai déjà un compte ? </span> <a href="{{ path('app_login') }}" class="text-center fw-bold text-black">Je me connecte</a>
+        </div>
+    </div>
+    {{ form_end(registrationForm) }}
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

@@ -1,0 +1,90 @@
+/* Ajout de class */
+
+.min-vh-100 {
+    min-height: 100vh;
+}
+
+.text-blue {
+    color: #003366;
+}
+
+.bg-blue {
+    background-color: #003366;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-10{
+    width: 10%;
+}
+
+.vh-35 {
+    height: 35vh;
+}
+
+/* Menu */
+
+.menu {
+    height: 15vh; /* Le menu occupe 15% de la hauteur de la page */
+    display: flex;
+    align-items: center; /* Centrer verticalement le contenu */
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar-brand img {
+    height: 100%; /* Le logo occupe 100% de la hauteur du menu */
+    margin-right: 10px;
+}
+
+.navbar-custom {
+    background-color: #003366;
+}
+
+.custom-toggler {
+    color: #fff;
+    border-color: #fff;
+}
+
+
+/* Login */
+
+.bg-image-login {
+    background-image: url('../images/login-image.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.full-height {
+    height: 100vh; /* 100% de la hauteur de l'écran */
+}
+
+.form-control {
+    border: 1px solid #003366;
+}
+
+.form-check-input {
+    border: 1px solid #003366;
+    margin-top: -1px;
+}
+
+
+/* Home */
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}

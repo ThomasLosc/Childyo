@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{{ include('header/header.html.twig') }}
+    <div class="container mt-5 mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+        <div class="container">
+            <h2 class="text-center fw-bold">
+                Prenez soin de vos enfants 
+                <br />
+                avec notre système de rendez-vous médicaux
+            </h2>
+        </div>
+        <div class="container mt-5 w-75">
+            <div class="row g-2">
+                <div class="col-12 col-md-5">
+                    <input type="text" class="form-control" placeholder="🔍 Rechercher un médecin" />
+                </div>
+                <div class="col-12 col-md-5">
+                    <input type="text" class="form-control" placeholder="📍 Où ?" />
+                </div>
+                <div class="col-12 col-md-2">
+                    <button class="btn btn-info w-100 fw-bold">Rechercher</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {# <div class=" container-fluid  d-flex align-items-center justify-content-center bg-blue flex-shrink-0 vh-35">
+        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+                <img src="{{ asset('build/images/menu-image1.png') }}" class="h-50"/>
+            </div>
+            <div class="w-75 h-75">
+                <p class="text-white fw-bold">Accès à des spécialistes</p>
+                <p class="text-white">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
+            </div>
+        </div>
+        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+                <img src="{{ asset('build/images/menu-image2.png') }}" class="h-50"/>
+            </div>
+            <div class="w-75 h-75">
+                <p class="text-white fw-bold">Suivi des rendez-vous</p>
+                <p class="text-white">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
+            </div>
+        </div>
+        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+                <img src="{{ asset('build/images/menu-image3.png') }}" class="h-50"/>
+            </div>
+            <div class="w-75 h-75">
+                <p class="text-white fw-bold">Sécurité et confidentialité</p>
+                <p class="text-white">Vos informations sont protégées et traitées avec le plus grand soin.</p>
+            </div>
+        </div>
+    </div> #}
+    {{ include('footer/footer.html.twig') }}
+</div>
+{% endblock %}
