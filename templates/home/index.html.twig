@@ -1,65 +1,211 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ include('header/header.html.twig') }}
-    {% if app.user %}
-        <div class="container">
-            <a href="{{ path('app_dashboard') }}" class="btn btn-info w-25 justify-content-center fw-bold mt-3 d-flex align-items-center"><i class="bi bi-arrow-left me-3 fs-5"></i>
-                Revenir au tableau de bord
-            </a>
-        </div>
-    {% endif %}
-    <div class="container mt-5 mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1">
-        <div class="container">
-            <h2 class="text-center fw-bold">
-                Prenez soin de vos enfants 
-                <br />
-                avec notre système de rendez-vous médicaux
-            </h2>
-        </div>
-        <div class="container mt-5 w-75">
-            <div class="row g-2">
-                <div class="col-12 col-md-5">
-                    <input type="text" class="form-control" placeholder="🔍 Rechercher un médecin" />
-                </div>
-                <div class="col-12 col-md-5">
-                    <input type="text" class="form-control" placeholder="📍 Où ?" />
-                </div>
-                <div class="col-12 col-md-2">
-                    <button class="btn btn-info w-100 fw-bold">Rechercher</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {# <div class=" container-fluid  d-flex align-items-center justify-content-center bg-blue flex-shrink-0 vh-35">
-        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-                <img src="{{ asset('build/images/menu-image1.png') }}" class="h-50"/>
-            </div>
-            <div class="w-75 h-75">
-                <p class="text-white fw-bold">Accès à des spécialistes</p>
-                <p class="text-white">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
-            </div>
-        </div>
-        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-                <img src="{{ asset('build/images/menu-image2.png') }}" class="h-50"/>
-            </div>
-            <div class="w-75 h-75">
-                <p class="text-white fw-bold">Suivi des rendez-vous</p>
-                <p class="text-white">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
-            </div>
-        </div>
-        <div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-            <div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-                <img src="{{ asset('build/images/menu-image3.png') }}" class="h-50"/>
-            </div>
-            <div class="w-75 h-75">
-                <p class="text-white fw-bold">Sécurité et confidentialité</p>
-                <p class="text-white">Vos informations sont protégées et traitées avec le plus grand soin.</p>
-            </div>
-        </div>
-    </div> #}
-    {{ include('footer/footer.html.twig') }}
-</div>
-{% endblock %}
+	{{ include('header/header.html.twig') }}
+	{% if app.user %}
+		<div class="container">
+			<a href="{{ path('app_dashboard') }}" class="btn primary-btn w-25 justify-content-center fw-bold mt-3 d-flex align-items-center">
+				<i class="bi bi-arrow-left me-3 fs-5"></i>
+				Revenir au tableau de bord
+			</a>
+		</div>
+	{% endif %}
+	<div class="container mt-5 mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1">
+		<div class="container">
+			<h2 class="text-center fw-bold">
+				Prenez soin de vos enfants
+				<br/>
+				avec notre système de rendez-vous médicaux
+			</h2>
+		</div>
+		<div class="container mt-5 w-75">
+			<div class="row g-2">
+				<div class="col-12 col-md-5">
+					<input type="text" class="form-control" placeholder="🔍 Rechercher un médecin"/>
+				</div>
+				<div class="col-12 col-md-5">
+					<input type="text" class="form-control" placeholder="📍 Où ?"/>
+				</div>
+				<div class="col-12 col-md-2">
+					<button class="btn primary-btn w-100 fw-bold">Rechercher</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{### Content for non auth users ###}
+	{% if not app.user %}
+		{### Section fonctionnalité de l'app ###}
+		<div class="container-fluid d-flex align-items-center justify-content-center bg-blue flex-shrink-0 vh-35">
+			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+					<img src="{{ asset('build/images/menu-image1.png') }}" class="h-50"/>
+				</div>
+				<div class="w-75 h-75">
+					<h5 class="text-white fw-bold">Accès à des spécialistes</h5>
+					<p class="text-white lato-light">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
+				</div>
+			</div>
+			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+					<img src="{{ asset('build/images/menu-image2.png') }}" class="h-50"/>
+				</div>
+				<div class="w-75 h-75">
+					<h5 class="text-white fw-bold">Suivi des rendez-vous</h5>
+					<p class="text-white lato-light">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
+				</div>
+			</div>
+			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
+				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
+					<img src="{{ asset('build/images/menu-image3.png') }}" class="h-50"/>
+				</div>
+				<div class="w-75 h-75">
+					<h5 class="text-white fw-bold">Sécurité et confidentialité</h5>
+					<p class="text-white lato-light">Vos informations sont protégées et traitées avec le plus grand soin.</p>
+				</div>
+			</div>
+		</div>
+
+		{### Section ###}
+		<div class="container mt-5 mb-5">
+			<h2 class="text-center fw-bold mb-5">Section à ajouter</h2>
+		</div>
+
+		{### Section spécialiste ###}
+		<div class="container-fluid bg-blue vh-80 rounded d-flex flex-column justify-content-center align-items-center rounded">
+			<h2 class="text-center text-white fw-bold">Nos top spécialistes</h2>
+			<div class="row mt-3">
+				<div class="row mt-3 px-5 justify-content-center">
+					<div class="col-md-4">
+						<div class="card h-100 rounded-card">
+							<img src="{{ asset('build/images/medecin-1.jpg') }}" class="card-img-top" alt="...">
+							<div class="card-body d-flex flex-column">
+								<div class="d-flex justify-content-between align-items-start">
+									<h5 class="card-title lato-bold">Dr. Louis Dupont</h5>
+									<div class="text-end">
+										<div class="d-flex align-items-center">
+											<i class="bi bi-star-fill text-warning me-1"></i>
+											<span class="fw-bold me-1">4.5</span>
+											<span>(245)</span>
+										</div>
+									</div>
+								</div>
+								<p class="card-text lato-light mt-2">Dr. Louis est un psychiatre pédiatrique compétent qui se concentre sur l'évaluation et le traitement des troubles du comportement chez les enfants.</p>
+								<a href="#" class="text-black mt-auto">+ Voir le profil</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card h-100 rounded-card">
+							<img src="{{ asset('build/images/medecin-2.jpg') }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start">
+									<h5 class="card-title lato-bold">Dr. Léna Dupont</h5>
+									<div class="text-end">
+										<div class="d-flex align-items-center">
+											<i class="bi bi-star-fill text-warning me-1"></i>
+											<span class="fw-bold me-1">4.9</span>
+											<span>(250)</span>
+										</div>
+									</div>
+								</div>
+								<p class="card-text lato-light mt-2">Dr. Léna est une neuropédiatre renommée possédant une vaste expérience reconnue dans le traitement des troubles neurologiques chez les enfants.</p>
+								<a href="#" class="text-black">+ Voir le profil</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card h-100 rounded-card">
+							<img src="{{ asset('build/images/medecin-4.jpg') }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-start">
+									<h5 class="card-title lato-bold">Dr. Yves Dupont</h5>
+									<div class="text-end">
+										<div class="d-flex align-items-center">
+											<i class="bi bi-star-fill text-warning me-1"></i>
+											<span class="fw-bold me-1">4.1</span>
+											<span>(220)</span>
+										</div>
+									</div>
+								</div>
+								<p class="card-text lato-light mt-2">Dr. Yves est un psychiatre pédiatrique expérimenté qui se spécialise dans l'évaluation et le traitement des problèmes de santé mentale chez les enfants.</p>
+								<a href="#" class="text-black">+ Voir le profil</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{### Section FAQ ###}
+		<div class="container mt-5 mb-5">
+			<h2 class="text-center fw-bold">FAQ</h2>
+			<p class="text-center lato-bold-italic mb-5">Découvrez les réponses à vos questions les plus fréquentes sur les différents troubles et traitements disponibles.</p>
+			<div class="accordion" id="faqAccordion">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="question1">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer1" aria-expanded="true" aria-controls="answer1">
+							Quels sont les signes courants de troubles mentaux ?
+						</button>
+					</h2>
+					<div id="answer1" class="accordion-collapse collapse" aria-labelledby="question1" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							Les signes courants de troubles mentaux peuvent inclure des changements d'humeur, des troubles du sommeil, des difficultés de concentration, des changements dans les habitudes alimentaires, des pensées suicidaires, etc.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="question2">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2" aria-expanded="false" aria-controls="answer2">
+							Quels sont les traitements disponibles pour les troubles mentaux ?
+						</button>
+					</h2>
+					<div id="answer2" class="accordion-collapse collapse" aria-labelledby="question2" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							Les traitements pour les troubles mentaux peuvent inclure la thérapie, les médicaments, la thérapie cognitivo-comportementale, la thérapie de groupe, etc.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="question3">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3" aria-expanded="false" aria-controls="answer3">
+							Quelles sont les étapes à suivre pour obtenir un diagnostic et commencer un traitement ?
+						</button>
+					</h2>
+					<div id="answer3" class="accordion-collapse collapse" aria-labelledby="question3" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							Les étapes pour obtenir un diagnostic et commencer un traitement peuvent inclure une consultation médicale, des tests psychologiques, des évaluations spécialisées, la planification d'un plan de traitement, etc.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="question4">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4" aria-expanded="false" aria-controls="answer4">
+							Qu'est-ce que la santé mentale et pourquoi est-elle importante ?
+						</button>
+					</h2>
+					<div id="answer4" class="accordion-collapse collapse" aria-labelledby="question4" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							La santé mentale se réfère à notre bien-être émotionnel, psychologique et social. Elle est importante car elle influence notre façon de penser, de ressentir et d'agir dans la vie quotidienne, ainsi que nos relations avec les autres.
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="question5">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5" aria-expanded="false" aria-controls="answer5">
+							Comment puis-je soutenir quelqu'un qui souffre de troubles mentaux ?
+						</button>
+					</h2>
+					<div id="answer5" class="accordion-collapse collapse" aria-labelledby="question5" data-bs-parent="#faqAccordion">
+						<div class="accordion-body">
+							Pour soutenir quelqu'un qui souffre de troubles mentaux, il est important d'écouter attentivement, d'offrir un soutien émotionnel, de rester présent et de leur montrer de l'empathie. Encouragez-les à chercher de l'aide professionnelle si nécessaire.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+
+	{{ include('footer/footer.html.twig') }}
+</div>{% endblock %}

@@ -1,48 +1,48 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ include('header/header.html.twig') }}
+	{{ include('header/header.html.twig') }}
 
-    <div class="container-register m-auto mt-5 mb-5">
-        <h1 class="text-center text-blue fw-bold">Authentification à deux facteurs</h1>
-        <p class="text-center mt-3 mb-3">Veuillez saisir le code de vérification qui vous a été envoyé par email pour terminer la connexion.</p>
-        
-        <div class="container-fluid w-25 m-auto">
-        {# Display error message #}
-        {% if authenticationError %}
-        <p>{{ authenticationError|trans(authenticationErrorData, 'SchebTwoFactorBundle') }}</p>
-        {% endif %}
+	<div class="container-register m-auto mt-5 mb-5">
+		<h1 class="text-center text-blue fw-bold">Authentification à deux facteurs</h1>
+		<p class="text-center mt-6 mb-5">Veuillez saisir le code de vérification qui vous a été envoyé par email pour terminer la connexion.</p>
 
-        {# Let the user select the authentication method #}
-        {% if availableTwoFactorProviders|length > 1 %}
-            <p>{{ "choose_provider"|trans({}, 'SchebTwoFactorBundle') }}:
-                {% for provider in availableTwoFactorProviders %}
-                    <a href="{{ path("2fa_login", {"preferProvider": provider}) }}">{{ provider }}</a>
-                {% endfor %}
-            </p>
-        {% endif %}
-                <form class="form" action="{{ checkPathUrl ? checkPathUrl: path(checkPathRoute) }}" method="post">
-                    <div class="form-group">
-                        <label for="_auth_code" class="fw-bold mb-2">Code de vérification :</label>
-                        <input class="form-control w-100 mb-3" id="_auth_code" type="text" name="{{ authCodeParameterName }}" autocomplete="one-time-code" autofocus/>
-                    </div>
-                    {% if displayTrustedOption %}
-                    <div class="d-flex align-items-center">
-                    <input class="form-check-input me-2  fs-4" id="_trusted" type="checkbox" name="{{ trustedParameterName }}" />
-                    <label class="fw-bold" for="_trusted">Se Souvenir de cet appareil</label>
-                </div>
+		<div
+			class="container-fluid w-25 m-auto">
+			{# Display error message #}
+			{% if authenticationError %}
+				<p>{{ authenticationError|trans(authenticationErrorData, 'SchebTwoFactorBundle') }}</p>
+			{% endif %}
+
+			{# Let the user select the authentication method #}
+			{% if availableTwoFactorProviders|length > 1 %}
+				<p>{{ "choose_provider"|trans({}, 'SchebTwoFactorBundle') }}:
+					{% for provider in availableTwoFactorProviders %}
+						<a href="{{ path("2fa_login", {"preferProvider": provider}) }}">{{ provider }}</a>
+					{% endfor %}
+				</p>
+			{% endif %}
+			<form class="form" action="{{ checkPathUrl ? checkPathUrl: path(checkPathRoute) }}" method="post">
+				<div class="form-group">
+					<label for="_auth_code" class="fw-bold mb-2">Code de vérification :</label>
+					<input class="form-control w-100 mb-3" placeholder="XXXXXX" id="_auth_code" type="text" name="{{ authCodeParameterName }}" autocomplete="one-time-code" autofocus/>
+				</div>
+				{% if displayTrustedOption %}
+					<div class="d-flex align-items-center">
+						<input class="form-check-input me-2  fs-4" id="_trusted" type="checkbox" name="{{ trustedParameterName }}"/>
+						<label class="fw-bold" for="_trusted">Se Souvenir de cet appareil</label>
+					</div>
 
 
-                    {% endif %}
-                    {% if isCsrfProtectionEnabled %}
-                        <input type="hidden" name="{{ csrfParameterName }}" value="{{ csrf_token(csrfTokenId) }}">
-                    {% endif %}
-                        <button class="btn btn-info w-100 fw-bold mt-4" type="submit" value="{{ "Valider le code"|trans({}, 'SchebTwoFactorBundle') }}">Valider le code</button>
-                </form>
-            </div>
-        </div>
+				{% endif %}
+				{% if isCsrfProtectionEnabled %}
+					<input type="hidden" name="{{ csrfParameterName }}" value="{{ csrf_token(csrfTokenId) }}">
+				{% endif %}
+				<button class="btn primary-btn w-100 fw-bold mt-4" type="submit" value="{{ "Valider le code"|trans({}, 'SchebTwoFactorBundle') }}">Valider le code</button>
+			</form>
+		</div>
+	</div>
 
-{{ include('footer/footer.html.twig') }}
+	{{ include('footer/footer.html.twig') }}
 
 {% endblock %}
-

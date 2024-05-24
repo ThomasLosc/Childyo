@@ -1,4 +1,56 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700&display=swap');
+
+.lato-light {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.lato-regular {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.lato-bold {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.lato-black {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+  
+.lato-light-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.lato-regular-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.lato-bold-italic {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+  
+
 /* Ajout de class */
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #F7F8FC;
+}
 
 .min-vh-100 {
     min-height: 100vh;
@@ -8,8 +60,17 @@
     color: #003366;
 }
 
+.text-black {
+    color: #000000;
+}
+
 .bg-blue {
     background-color: #003366;
+}
+
+.primary-btn {
+    background-color: #0FCFB7;
+    color: #000000;
 }
 
 .w-90 {
@@ -24,8 +85,16 @@
     width: 10%;
 }
 
+.w-55 {
+    width: 55%;
+}
+
 .vh-35 {
     height: 35vh;
+}
+
+.vh-80 {
+    height: 80vh;
 }
 
 .me-6{
@@ -91,4 +160,12 @@
 
 .flex-shrink-0 {
     flex-shrink: 0;
+}
+
+.rounded-card {
+    border-radius: 35px;
+}
+
+.rounded-card img {
+    border-radius: 35px 35px 0 0;
 }

@@ -1,32 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ include('header/header.html.twig') }}
-     <div class="container-fluid mb-4 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
-        <div class="container mt-5">
-            <h2 class="text-center fw-bold text-white">
-                Trouvez un rendez-vous avec un pédiatre
-                <br />
-                en quelques clics ! 
-            </h2>
-        </div>
-        <div class="container mt-5 w-75 mb-5">
-            <div class="row g-2">
-                <div class="col-12 col-md-5">
-                    <input type="text" class="form-control" placeholder="🔍 Rechercher un médecin" />
-                </div>
-                <div class="col-12 col-md-5">
-                    <input type="text" class="form-control" placeholder="📍 Où ?" />
-                </div>
-                <div class="col-12 col-md-2">
-                    <button class="btn btn-info w-100 fw-bold">Rechercher</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container m-auto w-100 flex-grow-1 mb-5">
-        <h5>Rendez-vous à venir</h5>
-        <h3 class="mt-5">Médecin favoris</h3>
-    </div>
-    {{ include('footer/footer.html.twig') }}
+	{{ include('header/header.html.twig') }}
+	<div class="container-fluid mb-4 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
+		<div class="container mt-5">
+			<h2 class="text-center fw-bold text-white">
+				Trouvez un rendez-vous avec un pédiatre
+				<br/>
+				en quelques clics !
+			</h2>
+		</div>
+		<div class="container mt-5 w-75 mb-5">
+			<div class="row g-2">
+				<div class="col-12 col-md-5">
+					<input type="text" class="form-control" placeholder="🔍 Rechercher un médecin"/>
+				</div>
+				<div class="col-12 col-md-5">
+					<input type="text" class="form-control" placeholder="📍 Où ?"/>
+				</div>
+				<div class="col-12 col-md-2">
+					<button class="btn primary-btn w-100 fw-bold">Rechercher</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container m-auto w-100 flex-grow-1 mb-5">
+		<h5>Rendez-vous à venir</h5>
+		<h3 class="mt-5">Médecin favoris</h3>
+	</div>
+	{{ include('footer/footer.html.twig') }}
 {% endblock %}
