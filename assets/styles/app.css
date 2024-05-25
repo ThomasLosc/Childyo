@@ -28,7 +28,7 @@
   
 .lato-light-italic {
     font-family: "Lato", sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-style: italic;
 }
 
@@ -56,6 +56,10 @@ body {
     min-height: 100vh;
 }
 
+.min-vh-80 {
+    min-height: 80vh;
+}
+
 .text-blue {
     color: #003366;
 }
@@ -66,6 +70,10 @@ body {
 
 .bg-blue {
     background-color: #003366;
+}
+
+.bg-green {
+    background-color: #0FCFB7;
 }
 
 .primary-btn {
@@ -168,4 +176,12 @@ body {
 
 .rounded-card img {
     border-radius: 35px 35px 0 0;
+}
+
+
+
+/* Mes documents */
+
+.upload-section-btn {
+
 }
