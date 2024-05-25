@@ -38,13 +38,15 @@ yarn install
 
 ### 4. Configuration de l'environnement
 
-Créez un fichier .env.dev.local à la racine du projet et configurez votre base de données et votre DSN de mailer.
+- Créez un fichier .env.dev.local à la racine du projet et configurez votre base de données DATABASE_URL et votre DSN de mailer MAILER_DSN.
+- Créez un compte sur Mailtrap et allez dans "Email Testing" -> "Inboxes" -> "My Inbox".
+- Sélectionnez symfony + 5 à droite et copiez les informations de connexion.
 
-Note : Pour les mails, vous pouvez utiliser Mailtrap. Créez un compte et allez dans "Email Testing" -> "Inboxes" -> "My Inbox".
-Sélectionnez symfony + 5 à droite et copiez les informations de connexion.
-
+```php
 DATABASE_URL=""
 MAILER_DSN=""
+```
+
 
 ### 5. Création de la base de donnée
 
@@ -53,9 +55,9 @@ php bin/console d:d:c
 ```
 
 ### 6. Exécuter la migration
-
+```php
 php bin/console make:migration
-
+```
 ### 7. Lancer le serveur de développement
 
 ```php
@@ -66,5 +68,5 @@ Une fois le serveur démarré, vous pouvez accéder à l'application dans votre 
 
 ## Ressources
 
-[Symfony](https://symfony.com/)
-[Mailtrap](https://mailtrap.io/)
+- [Symfony](https://symfony.com/)
+- [Mailtrap](https://mailtrap.io/)
