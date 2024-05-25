@@ -10,7 +10,7 @@
 					<a class="text-white me-6 text-decoration-none fs-5" href="#">Rendez-vous</a>
 				</li>
 				<li class="nav-item">
-					<a class="text-white me-6 text-decoration-none fs-5" href="#">Documents</a>
+					<a class="text-white me-6 text-decoration-none fs-5" href="{{ path('app_document') }}">Documents</a>
 				</li>
 				<li class="nav-item">
 					<a class="text-white text-decoration-none fs-5" href="#">Messagerie</a>
@@ -28,9 +28,20 @@
 			<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
 				<ul class="navbar-nav">
 					{% if app.user %}
-						<li class="nav-item">
-							<a class="btn btn-light text-blue lato-bold" href="{{ path('app_profil') }}">{{ app.user.prenom }}
-								{{ app.user.nom }}</a>
+						<li class="nav-item dropdown">
+							<a class="btn btn-light text-blue lato-bold dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								{{ app.user.prenom }}
+								{{ app.user.nom }}
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+								<li>
+									<a class="dropdown-item" href="{{ path('app_profil') }}">Mon profil</a>
+								</li>
+								<li><hr class="dropdown-divider"></li>
+								<li>
+									<a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
+								</li>
+							</ul>
 						</li>
 					{% else %}
 						<li class="nav-item">

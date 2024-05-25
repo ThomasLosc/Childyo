@@ -1,6 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{ include('header/header.html.twig') }}
-{{ include('footer/footer.html.twig') }}
+	{{ include('header/header.html.twig') }}
+	<div class="py-5 bg-blue">
+		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
+			<h2 class="lato-bold text-white">Mon profil</h2>
+			<button class="btn primary-btn lato-bold">
+				Ajouter un nouveau enfant
+			</button>
+		</div>
+	</div>
 {% endblock %}

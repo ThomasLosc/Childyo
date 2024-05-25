@@ -4,7 +4,7 @@
 	{{ include('header/header.html.twig') }}
 
 	<div class="py-5 bg-blue">
-		<div class="container-fluid d-flex w-90 justify-content-between m-auto align-items-center">
+		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
 			<h2 class="lato-bold text-white">Mes documents</h2>
 			<button class="btn primary-btn lato-bold">
 				Ajouter un document
@@ -14,7 +14,7 @@
 
 	{### Pas de document ###}
 	<div class="container vh-100 d-flex justify-content-center align-items-center">
-		<div class="bg-white h-75 p-5 upload-section rounded text-center">
+		<div class="bg-white h-75 p-3 upload-section rounded text-center">
 			<img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
 			<h5 class="mb-2 lato-bold">Veuillez déposez vos documents ici</h5>
 			<p class="lato-light-italic mb-4">Types de documents acceptés: pdf, jpg, jpeg, png.</p>
