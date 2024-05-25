@@ -24,19 +24,17 @@ git clone https://github.com/ThomasLosc/Childyo.git
 cd Childyo
 ```
 
-### 2. Installation des dépendances PHP
+### 2. Installation des dépendances
 
 ```bash
 composer install
 ```
 
-### 3. Installation des dépendances JavaScript
-
 ```bash
 yarn install
 ```
 
-### 4. Configuration de l'environnement
+### 3. Configuration de l'environnement
 
 - Créez un fichier .env.dev.local à la racine du projet et configurez votre base de données DATABASE_URL et votre DSN de mailer MAILER_DSN.
 - Créez un compte sur Mailtrap et allez dans "Email Testing" -> "Inboxes" -> "My Inbox".
@@ -48,17 +46,17 @@ MAILER_DSN=""
 ```
 
 
-### 5. Création de la base de donnée
+### 4. Création de la base de donnée
 
 ```php
 php bin/console d:d:c
 ```
 
-### 6. Exécuter la migration
+### 5. Exécuter la migration
 ```php
 php bin/console make:migration
 ```
-### 7. Lancer le serveur de développement
+### 6. Lancer le serveur de développement
 
 ```php
 symfony server:start
