@@ -42,7 +42,7 @@
 					<img src="{{ asset('build/images/menu-image1.png') }}" class="h-50"/>
 				</div>
 				<div class="w-75 h-75">
-					<h5 class="text-white fw-bold">Accès à des spécialistes</h5>
+					<h5 class="text-white lato-bold">Accès à des spécialistes</h5>
 					<p class="text-white lato-light">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
 				</div>
 			</div>
@@ -51,7 +51,7 @@
 					<img src="{{ asset('build/images/menu-image2.png') }}" class="h-50"/>
 				</div>
 				<div class="w-75 h-75">
-					<h5 class="text-white fw-bold">Suivi des rendez-vous</h5>
+					<h5 class="text-white lato-bold">Suivi des rendez-vous</h5>
 					<p class="text-white lato-light">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
 				</div>
 			</div>
@@ -60,20 +60,30 @@
 					<img src="{{ asset('build/images/menu-image3.png') }}" class="h-50"/>
 				</div>
 				<div class="w-75 h-75">
-					<h5 class="text-white fw-bold">Sécurité et confidentialité</h5>
+					<h5 class="text-white lato-bold">Sécurité et confidentialité</h5>
 					<p class="text-white lato-light">Vos informations sont protégées et traitées avec le plus grand soin.</p>
 				</div>
 			</div>
 		</div>
 
-		{### Section ###}
-		<div class="container mt-5 mb-5">
-			<h2 class="text-center fw-bold mb-5">Section à ajouter</h2>
+		{### Section À propos de nous ###}
+		<div class="container mt-5 mb-5 d-flex flex-column flex-md-row align-items-center">
+			<div class="w-100 w-md-50 p-2 about-img">
+				<img src="{{ asset('build/images/home-image.png') }}" class="img-fluid" alt="À propos de nous">
+			</div>
+			<div class="w-100 w-md-50 p-2">
+				<h2 class="text-center mb-4 lato-bold">À propos de nous</h2>
+				<p class="lato-regular">
+					<span class="lato-bold">Childyo</span>
+					vise principalement à simplifier la gestion des rendez-vous médicaux pour les parents et tuteurs d'enfants. Conscients des défis que rencontrent les familles pour organiser les soins de santé de leurs enfants, nous avons conçu une plateforme conviviale et pratique pour répondre à leurs besoins.
+				</p>
+			</div>
 		</div>
 
+
 		{### Section spécialiste ###}
-		<div class="container-fluid bg-blue vh-80 rounded d-flex flex-column justify-content-center align-items-center rounded">
-			<h2 class="text-center text-white fw-bold">Nos top spécialistes</h2>
+		<div class="container-fluid bg-blue rounded d-flex py-5 flex-column justify-content-center align-items-center rounded">
+			<h2 class="text-center text-white lato-bold">Nos top spécialistes</h2>
 			<div class="row mt-3">
 				<div class="row mt-3 px-5 justify-content-center">
 					<div class="col-md-4">
@@ -85,7 +95,7 @@
 									<div class="text-end">
 										<div class="d-flex align-items-center">
 											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="fw-bold me-1">4.5</span>
+											<span class="lato-bold me-1">4.5</span>
 											<span>(245)</span>
 										</div>
 									</div>
@@ -104,7 +114,7 @@
 									<div class="text-end">
 										<div class="d-flex align-items-center">
 											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="fw-bold me-1">4.9</span>
+											<span class="lato-bold me-1">4.9</span>
 											<span>(250)</span>
 										</div>
 									</div>
@@ -123,7 +133,7 @@
 									<div class="text-end">
 										<div class="d-flex align-items-center">
 											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="fw-bold me-1">4.1</span>
+											<span class="lato-bold me-1">4.1</span>
 											<span>(220)</span>
 										</div>
 									</div>
@@ -139,7 +149,7 @@
 
 		{### Section FAQ ###}
 		<div class="container mt-5 mb-5">
-			<h2 class="text-center fw-bold">FAQ</h2>
+			<h2 class="text-center lato-bold">FAQ</h2>
 			<p class="text-center lato-bold-italic mb-5">Découvrez les réponses à vos questions les plus fréquentes sur les différents troubles et traitements disponibles.</p>
 			<div class="accordion" id="faqAccordion">
 				<div class="accordion-item">

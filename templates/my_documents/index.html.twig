@@ -3,6 +3,16 @@
 {% block body %}
 	{{ include('header/header.html.twig') }}
 
+	<div class="py-5 bg-blue">
+		<div class="container-fluid d-flex w-90 justify-content-between m-auto align-items-center">
+			<h2 class="lato-bold text-white">Mes documents</h2>
+			<button class="btn primary-btn lato-bold">
+				Ajouter un document
+			</button>
+		</div>
+	</div>
+
+	{### Pas de document ###}
 	<div class="container vh-100 d-flex justify-content-center align-items-center">
 		<div class="bg-white h-75 p-5 upload-section rounded text-center">
 			<img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
@@ -12,6 +22,34 @@
 				Ajouter un document
 			</button>
 		</div>
+	</div>
+
+	{### Tableau de documents ###}
+	<div class="container-fluid w-90 menu d-flex justify-content-between align-items-center">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Titre</th>
+					<th scope="col">Type</th>
+					<th scope="col">Ajouté le</th>
+					<th scope="col">Patient concerné</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Résultats de tests neurologiques</td>
+					<td>Compte rendu</td>
+					<td>2 avril 2024</td>
+					<td>Lilian Dupont</td>
+				</tr>
+				<tr>
+					<td>Résultats d’imagerie médicale</td>
+					<td>Imagerie médicale</td>
+					<td>26 avril 2024</td>
+					<td>Lilian Dupont</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 {% endblock %}

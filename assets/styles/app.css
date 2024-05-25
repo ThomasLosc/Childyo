@@ -109,6 +109,10 @@ body {
     margin-right: 5rem !important;
 }
 
+.py-5 {
+    padding: 5rem !important;
+}
+
 /* Menu */
 
 .menu {
@@ -178,10 +182,17 @@ body {
     border-radius: 35px 35px 0 0;
 }
 
-
+.about-img img {
+    border-radius: 58% 20%;
+}
 
 /* Mes documents */
 
-.upload-section-btn {
+th {
+    background-color: #0FCFB7 !important;
+    padding: 12px !important;
+}
 
+td {
+    padding: 18px !important;
 }

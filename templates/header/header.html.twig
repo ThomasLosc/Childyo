@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom">
 	<div class="container-fluid w-90 menu d-flex justify-content-between align-items-center">
-		<a class="navbar-brand text-white fw-bold" href="{{ path('app_home') }}">
+		<a class="navbar-brand text-white lato-bold" href="{{ path('app_home') }}">
 			<img src="{{ asset('build/images/logo.webp') }}" alt="Childyo Logo"/>
 			<h4 class="lato-bold">Childyo</h4>
 		</a>
@@ -29,15 +29,15 @@
 				<ul class="navbar-nav">
 					{% if app.user %}
 						<li class="nav-item">
-							<a class="btn btn-light text-blue fw-bold" href="{{ path('app_profil') }}">{{ app.user.prenom }}
+							<a class="btn btn-light text-blue lato-bold" href="{{ path('app_profil') }}">{{ app.user.prenom }}
 								{{ app.user.nom }}</a>
 						</li>
 					{% else %}
 						<li class="nav-item">
-							<a class="btn btn-outline-light me-3 fw-bold" href="{{ path('app_register') }}">S'inscrire</a>
+							<a class="btn btn-outline-light me-3 lato-bold" href="{{ path('app_register') }}">S'inscrire</a>
 						</li>
 						<li class="nav-item">
-							<a class="btn btn-light text-blue fw-bold" href="{{ path('app_login') }}">Se connecter</a>
+							<a class="btn btn-light text-blue lato-bold" href="{{ path('app_login') }}">Se connecter</a>
 						</li>
 					{% endif %}
 				</ul>
