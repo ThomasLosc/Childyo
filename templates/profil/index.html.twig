@@ -6,8 +6,63 @@
 		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
 			<h2 class="lato-bold text-white">Mon profil</h2>
 			<button class="btn primary-btn lato-bold">
-				Ajouter un nouveau enfant
+				Ajouter un nouvel enfant
 			</button>
 		</div>
 	</div>
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col-md-6 mb-4">
+				<div class="card h-auto">
+					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
+						<h5 class="card-title fw-bold mb-0">Information de l’enfant(s)</h5>
+						<a href="#" class="text-white">
+							<i class="bi bi-pencil-square"></i>
+						</a>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-2">Nom: Dupont</p>
+						<p class="card-text mb-2">Prénom: Pierre</p>
+						<p class="card-text mb-2">Date de naissance: 15/05/2010</p>
+						<hr>
+						<p class="card-text mb-2">Nom: Dupont</p>
+						<p class="card-text mb-2">Prénom: Lucie</p>
+						<p class="card-text mb-2">Date de naissance: 22/08/2012</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="card h-auto">
+					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
+						<h5 class="card-title fw-bold mb-0">Identité du parent/tuteur</h5>
+						<a href="#" class="text-white">
+							<i class="bi bi-pencil-square"></i>
+						</a>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-2">Nom: Dupont</p>
+						<p class="card-text mb-2">Prénom: Marie</p>
+						<p class="card-text mb-2">Email: marie.dupont@example.com</p>
+						<p class="card-text mb-2">Téléphone: 0123456789</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="card h-auto">
+					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
+						<h5 class="card-title fw-bold mb-0">Paiement</h5>
+						<a href="#" class="text-white">
+							<i class="bi bi-pencil-square"></i>
+						</a>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-2">Type de carte: Visa</p>
+						<p class="card-text mb-2">Numéro de carte: **** **** **** 1234</p>
+						<p class="card-text mb-2">Date d'expiration: 12/25</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ include('footer/footer.html.twig') }}
 {% endblock %}
