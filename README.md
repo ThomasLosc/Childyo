@@ -1,7 +1,5 @@
 # Childyo
 
-## Introduction
-
 Childyo est une application conçue pour simplifier la gestion des rendez-vous médicaux pour les parents et les tuteurs d'enfants. Cette plateforme conviviale permet d'organiser les soins de santé des enfants de manière efficace et pratique.
 
 ## Prérequis
