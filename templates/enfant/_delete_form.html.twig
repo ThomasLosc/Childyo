@@ -1,0 +1,26 @@
+<button id="delete" class="btn btn-danger mt-3 fw-bold" data-bs-toggle="modal" 
+        data-bs-target="#supression--{{enfant.id}}-modal">
+	    <i class="bi bi-trash"></i>
+        Supprimer
+</button>
+
+<div class="modal fade" id="supression--{{ enfant.id }}-modal" tabindex="-1" aria-labelledby="supression-enfant" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h4 class="modal-title text-white" id="supression--enfant--{{ enfant.id }}">Suppression de l'enfant</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir supprimer l'enfant <span class="fw-bold">{{ enfant.nom }} {{ enfant.prenom }}</span> ?</p>
+                <div class="d-flex align-items-center justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+                    <form method="post" action="{{ path('app_enfant_delete', {'id': enfant.id}) }}">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ enfant.id) }}">
+                        <button id="deleteComfirmer" type="submit" class="btn btn-danger">Confirmer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

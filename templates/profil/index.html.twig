@@ -5,9 +5,6 @@
 	<div class="py-5 bg-blue">
 		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
 			<h2 class="lato-bold text-white">Mon profil</h2>
-			<button class="btn primary-btn lato-bold">
-				Ajouter un nouvel enfant
-			</button>
 		</div>
 	</div>
 	<div class="container mt-5 mb-5">
@@ -16,18 +13,33 @@
 				<div class="card h-auto">
 					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
 						<h5 class="card-title fw-bold mb-0">Information de l’enfant(s)</h5>
-						<a href="#" class="text-white">
-							<i class="bi bi-pencil-square"></i>
-						</a>
 					</div>
 					<div class="card-body">
-						<p class="card-text mb-2">Nom: Dupont</p>
-						<p class="card-text mb-2">Prénom: Pierre</p>
-						<p class="card-text mb-2">Date de naissance: 15/05/2010</p>
-						<hr>
-						<p class="card-text mb-2">Nom: Dupont</p>
-						<p class="card-text mb-2">Prénom: Lucie</p>
-						<p class="card-text mb-2">Date de naissance: 22/08/2012</p>
+					{% if enfants is empty %}
+						<p class="card-text mb-2 text-center">Vous n'avez pas encore ajouté d'enfant.</p>
+						<div class="text-center mt-4">
+						<a class="btn btn-info fw-bold" href="{{ path('app_enfant_new') }}">
+							Ajouter un nouvel enfant
+						</a>
+						</div>
+					{% endif %}
+					{% for enfant in enfants %}
+						<p class="card-text mb-2">Nom: <span class="fw-bold">{{ enfant.nom }}</span></p>
+						<p class="card-text mb-2">Prénom: <span class="fw-bold">{{ enfant.prenom }}</span></p>
+						<p class="card-text mb-2">Date de naissance: <span class="fw-bold">{{ enfant.dateNaissance|date('d/m/Y') }}</span></p>
+						<p class="card-text mb-2">Médecin traitant: <span class="fw-bold">{{ enfant.medecinTraitant }}</span></p>
+						
+						<div class="d-flex justify-content-between">
+						<a href="{{ path('app_enfant_edit', {'id' : enfant.id}) }}" class="btn btn-info mt-3 fw-bold">
+							<i class="bi bi-pencil-square"></i>
+							Modifier
+						</a>
+						{{ include('enfant/_delete_form.html.twig') }}
+						</div>
+						{% if not loop.last %}
+							<hr>
+						{% endif %}
+					{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -40,10 +52,14 @@
 						</a>
 					</div>
 					<div class="card-body">
-						<p class="card-text mb-2">Nom: Dupont</p>
-						<p class="card-text mb-2">Prénom: Marie</p>
-						<p class="card-text mb-2">Email: marie.dupont@example.com</p>
-						<p class="card-text mb-2">Téléphone: 0123456789</p>
+						<p class="card-text mb-2">Nom: <span class="fw-bold">{{ app.user.nom }}</span></p>
+						<p class="card-text mb-2">Prénom: <span class="fw-bold">{{ app.user.prenom }}</span></p>
+						<p class="card-text mb-2">Email: <span class="fw-bold">{{ app.user.email }}</span></p>
+						<p class="card-text mb-2">Téléphone: <span class="fw-bold">{{ app.user.telephone }}</span></p>
+						<a href="{{ path('app_user_edit', {'id' : app.user.id}) }}" class="btn btn-info mt-3 fw-bold">
+							<i class="bi bi-pencil-square"></i>
+							Modifier mes informations
+						</a>
 					</div>
 				</div>
 			</div>

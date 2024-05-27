@@ -16,6 +16,7 @@
         "scheb/2fa-bundle": "^6.12",
         "scheb/2fa-email": "^6.12",
         "scheb/2fa-trusted-device": "^6.12",
+        "sensio/framework-extra-bundle": "^6.2",
         "symfony/asset": "6.1.*",
         "symfony/console": "6.1.*",
         "symfony/doctrine-messenger": "6.1.*",
