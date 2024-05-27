@@ -1,0 +1,26 @@
+
+<button id="delete" class="btn btn-danger fw-bold" data-bs-toggle="modal" 
+        data-bs-target="#supression--{{document.id}}-modal">
+        <i class="bi bi-trash"></i>
+</button>
+
+<div class="modal fade" id="supression--{{ document.id }}-modal" tabindex="-1" aria-labelledby="supression-document" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h4 class="modal-title text-white" id="supression--document--{{ document.id }}">Suppression du document</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Êtes-vous sûr de vouloir supprimer le document <span class="fw-bold">{{ document.titre }}</span> ?</p>
+                <div class="d-flex align-items-center justify-content-end gap-2">
+                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
+                    <form method="post" action="{{ path('app_document_delete', {'id': document.id}) }}" class="mb-0">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ document.id) }}">
+                        <button id="deleteConfirmer" type="submit" class="btn btn-danger">Confirmer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

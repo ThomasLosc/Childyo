@@ -1,55 +1,61 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	{{ include('header/header.html.twig') }}
+    {{ include('header/header.html.twig') }}
 
-	<div class="py-5 bg-blue">
-		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
-			<h2 class="lato-bold text-white">Mes documents</h2>
-			<button class="btn primary-btn lato-bold">
-				Ajouter un document
-			</button>
-		</div>
-	</div>
+    <div class="py-5 bg-blue">
+        <div class="container-fluid d-flex justify-content-between m-auto align-items-center">
+            <h2 class="lato-bold text-white">Mes documents</h2>
+            
+            <a href="{{ path('app_document_new') }}" class="btn primary-btn lato-bold">
+                Ajouter un enfant
+            </a>
+        </div>
+    </div>
 
-	{### Pas de document ###}
-	<div class="container vh-100 d-flex justify-content-center align-items-center">
-		<div class="bg-white h-75 p-3 upload-section rounded text-center">
-			<img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
-			<h5 class="mb-2 lato-bold">Veuillez déposez vos documents ici</h5>
-			<p class="lato-light-italic mb-4">Types de documents acceptés: pdf, jpg, jpeg, png.</p>
-			<button class="btn primary-btn lato-bold mt-2">
-				Ajouter un document
-			</button>
-		</div>
-	</div>
-
-	{### Tableau de documents ###}
-	<div class="container-fluid w-90 menu d-flex justify-content-between align-items-center">
-		<table class="table">
-			<thead>
-				<tr>
-					<th scope="col">Titre</th>
-					<th scope="col">Type</th>
-					<th scope="col">Ajouté le</th>
-					<th scope="col">Patient concerné</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Résultats de tests neurologiques</td>
-					<td>Compte rendu</td>
-					<td>2 avril 2024</td>
-					<td>Lilian Dupont</td>
-				</tr>
-				<tr>
-					<td>Résultats d’imagerie médicale</td>
-					<td>Imagerie médicale</td>
-					<td>26 avril 2024</td>
-					<td>Lilian Dupont</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-
+    {% if documents is not empty %}
+        <div class="container-fluid w-90 menu d-flex justify-content-between mt-5 align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titre</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Ajouté le</th>
+                        <th scope="col">Patient concerné</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for document in documents %}
+                        <tr>
+                            <td>{{ document.titre }}</td>
+                            <td>{{ document.type }}</td>
+                            <td>{{ document.dateAjout|date('d/m/Y') }}</td>
+                            <td>{{ document.enfant.__toString() }}</td>
+                            <td>
+                               <a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn btn-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a href="{{ path('document_show', {'id': document.id}) }}" class="btn btn-info">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                       {{ include('document/_delete_form.html.twig') }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="container vh-100 d-flex justify-content-center align-items-center">
+            <div class="bg-white h-75 p-3 upload-section rounded text-center">
+                <img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
+                <h5 class="mb-2 lato-bold">Veuillez déposer vos documents ici</h5>
+                <p class="lato-light-italic mb-4">Types de documents acceptés: pdf, jpg, jpeg, png.</p>
+                <button class="btn primary-btn lato-bold mt-2">
+                    <i class="bi bi-plus"></i>
+                </button>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
