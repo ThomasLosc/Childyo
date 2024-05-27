@@ -1,7 +1,7 @@
 <button id="delete" class="btn btn-danger mt-3 fw-bold" data-bs-toggle="modal" 
         data-bs-target="#supression--{{enfant.id}}-modal">
-	    <i class="bi bi-trash"></i>
         Supprimer
+        <i class="bi bi-trash"></i>
 </button>
 
 <div class="modal fade" id="supression--{{ enfant.id }}-modal" tabindex="-1" aria-labelledby="supression-enfant" aria-hidden="true">
@@ -15,7 +15,7 @@
                 <p>Êtes-vous sûr de vouloir supprimer l'enfant <span class="fw-bold">{{ enfant.nom }} {{ enfant.prenom }}</span> ?</p>
                 <div class="d-flex align-items-center justify-content-end gap-2">
                     <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Annuler</button>
-                    <form method="post" action="{{ path('app_enfant_delete', {'id': enfant.id}) }}">
+                    <form method="post" action="{{ path('app_enfant_delete', {'id': enfant.id}) }}" class="mb-0">
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ enfant.id) }}">
                         <button id="deleteComfirmer" type="submit" class="btn btn-danger">Confirmer</button>
                     </form>
