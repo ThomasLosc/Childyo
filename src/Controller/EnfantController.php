@@ -26,7 +26,7 @@ class EnfantController extends AbstractController
             $entityManager->persist($enfant);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_enfant_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_profil', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('enfant/new.html.twig', [
@@ -52,7 +52,7 @@ class EnfantController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_enfant_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_profil', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('enfant/edit.html.twig', [
@@ -64,7 +64,7 @@ class EnfantController extends AbstractController
     #[Route('/{id}', name: 'app_enfant_delete', methods: ['POST'])]
     public function delete(Request $request, Enfant $enfant, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$enfant->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $enfant->getId(), $request->request->get('_token'))) {
             $entityManager->remove($enfant);
             $entityManager->flush();
         }
