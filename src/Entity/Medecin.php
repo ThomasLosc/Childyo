@@ -30,6 +30,15 @@ class Medecin
     #[ORM\OneToMany(targetEntity: RendezVous::class, mappedBy: 'medecin')]
     private Collection $rendezVouses;
 
+    #[ORM\Column(length: 255)]
+    private ?string $adresse = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $codePostal = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Ville = null;
+
     public function __construct()
     {
         $this->rendezVouses = new ArrayCollection();
@@ -114,6 +123,42 @@ class Medecin
                 $rendezVouse->setMedecin(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAdresse(): ?string
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(string $adresse): static
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    public function getCodePostal(): ?string
+    {
+        return $this->codePostal;
+    }
+
+    public function setCodePostal(string $codePostal): static
+    {
+        $this->codePostal = $codePostal;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->Ville;
+    }
+
+    public function setVille(string $Ville): static
+    {
+        $this->Ville = $Ville;
 
         return $this;
     }
