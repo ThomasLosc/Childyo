@@ -36,32 +36,38 @@
 	{### Content for non auth users ###}
 	{% if not app.user %}
 		{### Section fonctionnalité de l'app ###}
-		<div class="container-fluid d-flex align-items-center justify-content-center bg-blue flex-shrink-0 vh-35">
-			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-					<img src="{{ asset('build/images/menu-image1.png') }}" class="h-50"/>
-				</div>
-				<div class="w-75 h-75">
-					<h5 class="text-white lato-bold">Accès à des spécialistes</h5>
-					<p class="text-white lato-light">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
-				</div>
-			</div>
-			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-					<img src="{{ asset('build/images/menu-image2.png') }}" class="h-50"/>
-				</div>
-				<div class="w-75 h-75">
-					<h5 class="text-white lato-bold">Suivi des rendez-vous</h5>
-					<p class="text-white lato-light">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
+		<div class="container-fluid d-flex align-items-center justify-content-center bg-blue pt-5 pb-5 flex-column flex-lg-row">
+			<div class="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mb-lg-0">
+				<div class="d-flex align-items-center justify-content-center w-100">
+					<div class="d-flex align-items-center justify-content-center bg-white rounded-pill me-3 py-4">
+						<img src="{{ asset('build/images/menu-image1.png') }}" width="45px"/>
+					</div>
+					<div class="w-75">
+						<h5 class="text-white lato-bold">Accès à des spécialistes</h5>
+						<p class="text-white lato-light">Trouvez facilement des médecins spécialisés dans les troubles physiologiques des enfants.</p>
+					</div>
 				</div>
 			</div>
-			<div class="w-30 h-50 me-4 d-flex align-items-center justify-content-center">
-				<div class="w-20 h-100 d-flex align-items-center justify-content-center bg-white rounded-5 me-3">
-					<img src="{{ asset('build/images/menu-image3.png') }}" class="h-50"/>
+			<div class="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mb-lg-0">
+				<div class="d-flex align-items-center justify-content-center w-100">
+					<div class="d-flex align-items-center justify-content-center bg-white rounded-pill me-3 py-4">
+						<img src="{{ asset('build/images/menu-image2.png') }}" width="45px"/>
+					</div>
+					<div class="w-75">
+						<h5 class="text-white lato-bold">Suivi des rendez-vous</h5>
+						<p class="text-white lato-light">Gardez une trace de tous les rendez-vous de vos enfants et recevez des rappels.</p>
+					</div>
 				</div>
-				<div class="w-75 h-75">
-					<h5 class="text-white lato-bold">Sécurité et confidentialité</h5>
-					<p class="text-white lato-light">Vos informations sont protégées et traitées avec le plus grand soin.</p>
+			</div>
+			<div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
+				<div class="d-flex align-items-center justify-content-center w-100">
+					<div class="d-flex align-items-center justify-content-center bg-white rounded-pill me-3 py-4">
+						<img src="{{ asset('build/images/menu-image3.png') }}" width="45px"/>
+					</div>
+					<div class="w-75">
+						<h5 class="text-white lato-bold">Sécurité et confidentialité</h5>
+						<p class="text-white lato-light">Vos informations sont protégées et traitées avec le plus grand soin.</p>
+					</div>
 				</div>
 			</div>
 		</div>
