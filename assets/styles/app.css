@@ -119,9 +119,15 @@ body {
 /* Menu */
 
 .menu {
-    height: 15vh; /* Le menu occupe 15% de la hauteur de la page */
     display: flex;
     align-items: center; /* Centrer verticalement le contenu */
+}
+
+@media (max-width: 780px){
+    .navbar-nav {
+        text-align: center;
+        gap: 10px;
+    }
 }
 
 .navbar-brand {
@@ -131,7 +137,7 @@ body {
 }
 
 .navbar-brand img {
-    height: 100%; /* Le logo occupe 100% de la hauteur du menu */
+    height: 100px; /* Le logo occupe 100% de la hauteur du menu */
     margin-right: 10px;
 }
 
