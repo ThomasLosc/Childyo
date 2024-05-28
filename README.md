@@ -52,7 +52,7 @@ php bin/console d:d:c
 
 ### 5. Exécuter la migration
 ```php
-php bin/console make:migration
+php bin/console d:m:m
 ```
 ### 6. Lancer le serveur de développement
 
