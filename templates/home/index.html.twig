@@ -27,7 +27,7 @@
 					<input type="text" class="form-control" placeholder="📍 Où ?"/>
 				</div>
 				<div class="col-12 col-md-2">
-					<button class="btn primary-btn w-100 fw-bold">Rechercher</button>
+					<button class="btn primary-btn w-100 fw-bold" style="min-width: fit-content;">Rechercher</button>
 				</div>
 			</div>
 		</div>
@@ -88,65 +88,63 @@
 
 
 		{### Section spécialiste ###}
-		<div class="container-fluid bg-blue rounded d-flex py-5 flex-column justify-content-center align-items-center rounded">
+		<div class="container-fluid bg-blue d-flex py-4 flex-column justify-content-center align-items-center ">
 			<h2 class="text-center text-white lato-bold">Nos top spécialistes</h2>
-			<div class="row mt-3">
-				<div class="row mt-3 px-5 justify-content-center">
-					<div class="col-md-4">
-						<div class="card h-100 rounded-card">
-							<img src="{{ asset('build/images/medecin-1.jpg') }}" class="card-img-top" alt="...">
-							<div class="card-body d-flex flex-column">
-								<div class="d-flex justify-content-between align-items-start">
-									<h5 class="card-title lato-bold">Dr. Louis Dupont</h5>
-									<div class="text-end">
-										<div class="d-flex align-items-center">
-											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="lato-bold me-1">4.5</span>
-											<span>(245)</span>
-										</div>
+			<div class="row mt-3 px-md-5 px-3 justify-content-center">
+				<div class="col-lg-4 col-sm-6 py-3">
+					<div class="card h-100 rounded-card">
+						<img src="{{ asset('build/images/medecin-1.jpg') }}" class="card-img-top" alt="...">
+						<div class="card-body d-flex flex-column">
+							<div class="d-flex justify-content-between align-items-start">
+								<h5 class="card-title lato-bold">Dr. Louis Dupont</h5>
+								<div class="text-end">
+									<div class="d-flex align-items-center">
+										<i class="bi bi-star-fill text-warning me-1"></i>
+										<span class="lato-bold me-1">4.5</span>
+										<span>(245)</span>
 									</div>
 								</div>
-								<p class="card-text lato-light mt-2">Dr. Louis est un psychiatre pédiatrique compétent qui se concentre sur l'évaluation et le traitement des troubles du comportement chez les enfants.</p>
-								<a href="#" class="text-black mt-auto">+ Voir le profil</a>
 							</div>
+							<p class="card-text lato-light mt-2">Dr. Louis est un psychiatre pédiatrique compétent qui se concentre sur l'évaluation et le traitement des troubles du comportement chez les enfants.</p>
+							<a href="#" class="text-black mt-auto">+ Voir le profil</a>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="card h-100 rounded-card">
-							<img src="{{ asset('build/images/medecin-2.jpg') }}" class="card-img-top" alt="...">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-start">
-									<h5 class="card-title lato-bold">Dr. Léna Dupont</h5>
-									<div class="text-end">
-										<div class="d-flex align-items-center">
-											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="lato-bold me-1">4.9</span>
-											<span>(250)</span>
-										</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 py-3">
+					<div class="card h-100 rounded-card">
+						<img src="{{ asset('build/images/medecin-2.jpg') }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<div class="d-flex justify-content-between align-items-start">
+								<h5 class="card-title lato-bold">Dr. Léna Dupont</h5>
+								<div class="text-end">
+									<div class="d-flex align-items-center">
+										<i class="bi bi-star-fill text-warning me-1"></i>
+										<span class="lato-bold me-1">4.9</span>
+										<span>(250)</span>
 									</div>
 								</div>
-								<p class="card-text lato-light mt-2">Dr. Léna est une neuropédiatre renommée possédant une vaste expérience reconnue dans le traitement des troubles neurologiques chez les enfants.</p>
-								<a href="#" class="text-black">+ Voir le profil</a>
 							</div>
+							<p class="card-text lato-light mt-2">Dr. Léna est une neuropédiatre renommée possédant une vaste expérience reconnue dans le traitement des troubles neurologiques chez les enfants.</p>
+							<a href="#" class="text-black">+ Voir le profil</a>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="card h-100 rounded-card">
-							<img src="{{ asset('build/images/medecin-4.jpg') }}" class="card-img-top" alt="...">
-							<div class="card-body">
-								<div class="d-flex justify-content-between align-items-start">
-									<h5 class="card-title lato-bold">Dr. Yves Dupont</h5>
-									<div class="text-end">
-										<div class="d-flex align-items-center">
-											<i class="bi bi-star-fill text-warning me-1"></i>
-											<span class="lato-bold me-1">4.1</span>
-											<span>(220)</span>
-										</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 py-3">
+					<div class="card h-100 rounded-card">
+						<img src="{{ asset('build/images/medecin-4.jpg') }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<div class="d-flex justify-content-between align-items-start">
+								<h5 class="card-title lato-bold">Dr. Yves Dupont</h5>
+								<div class="text-end">
+									<div class="d-flex align-items-center">
+										<i class="bi bi-star-fill text-warning me-1"></i>
+										<span class="lato-bold me-1">4.1</span>
+										<span>(220)</span>
 									</div>
 								</div>
-								<p class="card-text lato-light mt-2">Dr. Yves est un psychiatre pédiatrique expérimenté qui se spécialise dans l'évaluation et le traitement des problèmes de santé mentale chez les enfants.</p>
-								<a href="#" class="text-black">+ Voir le profil</a>
 							</div>
+							<p class="card-text lato-light mt-2">Dr. Yves est un psychiatre pédiatrique expérimenté qui se spécialise dans l'évaluation et le traitement des problèmes de santé mentale chez les enfants.</p>
+							<a href="#" class="text-black">+ Voir le profil</a>
 						</div>
 					</div>
 				</div>
