@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\EnfantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +33,14 @@ class Enfant
 
     #[ORM\ManyToOne(inversedBy: 'enfants')]
     private ?User $user = null;
+
+    #[ORM\OneToMany(targetEntity: RendezVous::class, mappedBy: 'enfant')]
+    private Collection $rendezVouses;
+
+    public function __construct()
+    {
+        $this->rendezVouses = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -112,5 +122,35 @@ class Enfant
     public function __toString(): string
     {
         return $this->prenom . ' ' . $this->nom;
+    }
+
+    /**
+     * @return Collection<int, RendezVous>
+     */
+    public function getRendezVouses(): Collection
+    {
+        return $this->rendezVouses;
+    }
+
+    public function addRendezVouse(RendezVous $rendezVouse): static
+    {
+        if (!$this->rendezVouses->contains($rendezVouse)) {
+            $this->rendezVouses->add($rendezVouse);
+            $rendezVouse->setEnfant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRendezVouse(RendezVous $rendezVouse): static
+    {
+        if ($this->rendezVouses->removeElement($rendezVouse)) {
+            // set the owning side to null (unless already changed)
+            if ($rendezVouse->getEnfant() === $this) {
+                $rendezVouse->setEnfant(null);
+            }
+        }
+
+        return $this;
     }
 }
