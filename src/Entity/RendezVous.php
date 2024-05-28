@@ -28,6 +28,9 @@ class RendezVous
     #[ORM\ManyToOne(inversedBy: 'rendezVouses')]
     private ?Enfant $enfant = null;
 
+    #[ORM\ManyToOne(inversedBy: 'rendezVouses')]
+    private ?Medecin $medecin = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -77,6 +80,18 @@ class RendezVous
     public function setEnfant(?Enfant $enfant): static
     {
         $this->enfant = $enfant;
+
+        return $this;
+    }
+
+    public function getMedecin(): ?Medecin
+    {
+        return $this->medecin;
+    }
+
+    public function setMedecin(?Medecin $medecin): static
+    {
+        $this->medecin = $medecin;
 
         return $this;
     }
