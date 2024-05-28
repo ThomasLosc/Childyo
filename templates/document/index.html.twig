@@ -52,9 +52,9 @@
                 <img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
                 <h5 class="mb-2 lato-bold">Veuillez déposer vos documents ici</h5>
                 <p class="lato-light-italic mb-4">Types de documents acceptés: pdf, jpg, jpeg, png.</p>
-                <button class="btn primary-btn lato-bold mt-2">
+                <a href="{{ path('app_document_new') }}" class="btn primary-btn lato-bold mt-2">
                     <i class="bi bi-plus"></i>
-                </button>
+                </a>
             </div>
         </div>
     {% endif %}
