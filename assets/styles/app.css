@@ -138,7 +138,6 @@ body {
 
 .navbar-brand img {
     height: 100px; /* Le logo occupe 100% de la hauteur du menu */
-    margin-right: 10px;
 }
 
 .navbar-custom {
@@ -148,6 +147,20 @@ body {
 .custom-toggler {
     color: #fff;
     border-color: #fff;
+}
+
+/* Footer */
+@media (max-width: 780px) {
+    footer .navbar-brand {
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+    .footer-box {
+        flex-direction: column;
+    }
+    .footer-logo-box {
+        justify-content: center;
+    }
 }
 
 
