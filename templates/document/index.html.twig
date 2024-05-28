@@ -36,7 +36,7 @@
                                 <a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn btn-warning">
                                     <i class="bi bi-pencil"></i>
                                 </a>
-                                <a href="{{ path('document_view', {'id': document.id}) }}" target="_blank" class="btn btn-info">
+                                <a href="{{ path('document_show', {'id': document.id}) }}" target="_blank" class="btn btn-info">
                                     <i class="bi bi-eye"></i>
                                 </a>
                                 {{ include('document/_delete_form.html.twig') }}
