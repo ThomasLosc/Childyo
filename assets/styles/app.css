@@ -123,10 +123,13 @@ body {
     align-items: center; /* Centrer verticalement le contenu */
 }
 
-@media (max-width: 780px){
+@media (max-width: 990px){
     .navbar-nav {
         text-align: center;
         gap: 10px;
+    }
+    .navbar-nav .nav-item a {
+        margin-right: inherit!important;
     }
 }
 
@@ -150,7 +153,7 @@ body {
 }
 
 /* Footer */
-@media (max-width: 780px) {
+@media (max-width: 990px) {
     footer .navbar-brand {
         flex-direction: column;
         margin-bottom: 25px;
