@@ -10,8 +10,9 @@
 			</svg>
 		</button>
 		<div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-			<a class="navbar-brand d-none d-lg-block" href="{{ path('app_home') }}">
+			<a class="navbar-brand d-none d-lg-flex" href="{{ path('app_home') }}">
 				<img src="{{ asset('build/images/logo.webp') }}" alt="logo" style="width: 100px;">
+				<h4 class="text-white lato-bold">Childyo</h4>
 			</a>
 			<ul class="navbar-nav">
 				{% if app.user %}
