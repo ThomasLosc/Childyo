@@ -28,7 +28,7 @@ class RegistrationFormType extends AbstractType
                 'class' => 'form-control',
                 'maxlength' => '20'
             ],
-            'label' => 'Nom :',
+            'label' => 'Nom :',
             'label_attr' => [
                 'class' => 'form-label fw-bold'
             ]
@@ -39,7 +39,7 @@ class RegistrationFormType extends AbstractType
                 'class' => 'form-control',
                 'maxlength' => '20'
             ],
-            'label' => 'Prénom :',
+            'label' => 'Prénom :',
             'label_attr' => [
                 'class' => 'form-label fw-bold'
             ]
@@ -50,7 +50,7 @@ class RegistrationFormType extends AbstractType
                 'class' => 'form-control',
                 'maxlength' => '10'
             ],
-            'label' => 'Téléphone :',
+            'label' => 'Téléphone :',
             'label_attr' => [
                 'class' => 'form-label fw-bold'
             ],
@@ -66,7 +66,7 @@ class RegistrationFormType extends AbstractType
             'attr' => [
                 'class' => 'form-control',
             ],
-            'label' => 'Email :',
+            'label' => 'Email :',
             'label_attr' => [
                 'class' => 'form-label fw-bold'
             ]
@@ -93,7 +93,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control mb-3',
                 ],
-                'label' => 'Mot de passe :',
+                'label' => 'Mot de passe :',
                 'label_attr' => [
                     'class' => 'form-label fw-bold'
                 ],
@@ -102,7 +102,7 @@ class RegistrationFormType extends AbstractType
                 'attr' => [
                     'class' => 'form-control',
                 ],
-                'label' => 'Confirmez votre mot de passe :',
+                'label' => 'Confirmez votre mot de passe :',
                 'label_attr' => [
                     'class' => 'form-label fw-bold'
                 ],
