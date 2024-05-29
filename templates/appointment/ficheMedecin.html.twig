@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    <div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
+        <div class="container mt-5 w-75 mb-5">
+             <div class="w-100 w-md-75 m-auto mb-5 d-flex align-items-center justify-content-between" style="height: calc(33.33% - 16px);">
+                <div class="d-flex align-items-center">
+                    <div class="rounded-circle border border-dark overflow-hidden" style="width: 150px; height: 150px;">
+                        <img src="{{ asset('build/images/medecin.jpg') }}" alt="medecin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="d-flex flex-column ms-3">
+                        <h3 class="lato-regular text-white fw-bold">{{ medecin.prenom }} {{ medecin.nom }}</h3>
+                        <p class="lato-regular-italic text-white">{{ medecin.domaine }}</p>
+                        <h5 class="lato-regular-italic text-white mt-3">{{ medecin.adresse }}</h5>
+                        <h5 class="lato-regular-italic text-white">{{ medecin.codePostal }}, {{ medecin.ville }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ include('footer/footer.html.twig') }}
+{% endblock %}

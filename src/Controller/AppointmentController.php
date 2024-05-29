@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Medecin;
 use App\Repository\MedecinRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -44,6 +45,18 @@ class AppointmentController extends AbstractController
         return $this->render('appointment/prendreRdv.html.twig', [
             'controller_name' => 'AppointmentController',
             'pagination' => $pagination,
+        ]);
+    }
+
+    #[Route('/rendez-vous/{id}', name: 'app_rdv_medecin', methods: ['GET', 'POST'])]
+    public function rendezVousMedecin(Medecin $medecin): Response
+    {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
+        return $this->render('appointment/ficheMedecin.html.twig', [
+            'medecin' => $medecin,
         ]);
     }
 }
