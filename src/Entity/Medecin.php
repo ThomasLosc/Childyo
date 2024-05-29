@@ -37,7 +37,7 @@ class Medecin
     private ?string $codePostal = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $Ville = null;
+    private ?string $ville = null;
 
     public function __construct()
     {
@@ -153,12 +153,12 @@ class Medecin
 
     public function getVille(): ?string
     {
-        return $this->Ville;
+        return $this->ville;
     }
 
-    public function setVille(string $Ville): static
+    public function setVille(string $ville): static
     {
-        $this->Ville = $Ville;
+        $this->Ville = $ville;
 
         return $this;
     }

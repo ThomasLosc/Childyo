@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AppointmentController extends AbstractController
 {
     #[Route('/appointment', name: 'app_appointment')]
-    public function index(MedecinRepository $medecinRepository): Response
+    public function index(): Response
     {
         if ($this->getUser() === null) {
             return $this->redirectToRoute('app_login');
@@ -30,7 +30,10 @@ class AppointmentController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
 
-        $query = $medecinRepository->findAll();
+        $domaine = $request->query->get('domaine');
+        $ville = $request->query->get('ville');
+
+        $query = $medecinRepository->findMedecinByCriteria($domaine, $ville);
 
         $pagination = $paginator->paginate(
             $query,
@@ -44,3 +47,4 @@ class AppointmentController extends AbstractController
         ]);
     }
 }
+
