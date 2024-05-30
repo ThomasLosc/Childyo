@@ -1,33 +1,32 @@
-
 <div class="container-register m-auto mt-5 mb-5">
-    {% if app.request.attributes.get('_route') == 'app_document_edit' %}
-    <h1 class="text-center text-blue fw-bold">Modifier un document</h1>
-{% elseif app.request.attributes.get('_route') == 'app_document_new' %}
-    <h1 class="text-center text-blue fw-bold">Ajouter un document</h1>
-{% endif %}
+	{% if app.request.attributes.get('_route') == 'app_document_edit' %}
+		<h1 class="text-center text-blue fw-bold">Modifier un document</h1>
+	{% elseif app.request.attributes.get('_route') == 'app_document_new' %}
+		<h1 class="text-center text-blue fw-bold">Ajouter un document</h1>
+	{% endif %}
 </div>
 {{ form_start(form) }}
 <div class="container-fluid w-50 m-auto border rounded-3 p-3 mb-3">
-    <div class="row">
-        <div class="col-12 form-group-custom">
-            {{ form_row(form.titre) }}
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 form-group-custom">
-            {{ form_row(form.fichier, {'label': 'Fichier'}) }}
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-6 form-group-custom">
-            {{ form_row(form.type) }}
-        </div>
-        <div class="col-md-6 form-group-custom">
-            {{ form_row(form.enfant) }}
-        </div>
-    </div>
-    <div class="text-center mt-4">
-        <button type="submit" class="primary-btn btn fw-bold">Valider les informations</button>
-    </div>
+	<div class="row">
+		<div class="col-12 form-group-custom">
+			{{ form_row(form.titre) }}
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-12 form-group-custom">
+			{{ form_row(form.fichier, {'label': 'Fichier'}) }}
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-md-6 form-group-custom">
+			{{ form_row(form.type) }}
+		</div>
+		<div class="col-md-6 form-group-custom">
+			{{ form_row(form.enfant) }}
+		</div>
+	</div>
+	<div class="text-center mt-4">
+		<button type="submit" class="primary-btn fw-bold">Valider les informations</button>
+	</div>
 </div>
 {{ form_end(form) }}

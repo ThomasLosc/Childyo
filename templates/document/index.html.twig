@@ -7,7 +7,7 @@
 		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
 			<h2 class="lato-bold text-white">Mes documents</h2>
 
-			<a href="{{ path('app_document_new') }}" class="btn primary-btn lato-bold">
+			<a href="{{ path('app_document_new') }}" class="primary-btn lato-bold">
 				Ajouter un document
 			</a>
 		</div>
@@ -36,7 +36,7 @@
 								<a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn btn-warning">
 									<i class="bi bi-pencil"></i>
 								</a>
-								<a href="{{ path('document_show', {'id': document.id}) }}" target="_blank" class="btn btn-info">
+								<a href="{{ path('document_show', {'id': document.id}) }}" target="_blank" class="primary-btn">
 									<i class="bi bi-eye"></i>
 								</a>
 								{{ include('document/_delete_form.html.twig') }}
@@ -52,7 +52,7 @@
 				<img src="{{ asset('build/images/document.png') }}" alt="Mes documents" class="h-75">
 				<h5 class="mb-2 lato-bold">Veuillez déposer vos documents ici</h5>
 				<p class="lato-light-italic mb-4">Types de documents acceptés: pdf, jpg, jpeg, png.</p>
-				<a href="{{ path('app_document_new') }}" class="btn primary-btn lato-bold mt-2">
+				<a href="{{ path('app_document_new') }}" class="primary-btn lato-bold mt-2">
 					<i class="bi bi-plus"></i>
 					Ajouter un document
 				</a>

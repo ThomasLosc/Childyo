@@ -1,29 +1,38 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ include('header/header.html.twig') }}
+	{{ include('header/header.html.twig') }}
 
-    <div class="py-5 bg-blue">
-        <div class="container-fluid d-flex justify-content-between m-auto align-items-center">
-            <h2 class="lato-bold text-white">Détails du document</h2>
-        </div>
-    </div>
+	<div class="py-5 bg-blue">
+		<div class="container-fluid d-flex justify-content-between m-auto align-items-center">
+			<h2 class="lato-bold text-white">Détails du document</h2>
+		</div>
+	</div>
 
-    <div class="container-fluid w-90 menu d-flex justify-content-between mt-5 align-items-center">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">{{ document.titre }}</h4>
-            </div>
-            <div class="card-body">
-                <p><strong>Type :</strong> {{ document.type }}</p>
-                <p><strong>Ajouté le :</strong> {{ document.dateAjout|date('d/m/Y') }}</p>
-                <p><strong>Patient concerné :</strong> {{ document.enfant }}</p>
-                <p><strong>Fichier :</strong> <a href="{{ asset('uploads/documents/' ~ document.fichier) }}" target="_blank">Voir le fichier</a></p>
-            </div>
-            <div class="card-footer">
-                <a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn btn-primary">Modifier</a>
-                <a href="{{ path('app_document_delete', {'id': document.id}) }}" class="btn btn-danger">Supprimer</a>
-            </div>
-        </div>
-    </div>
+	<div class="container-fluid w-90 menu d-flex justify-content-between mt-5 align-items-center">
+		<div class="card">
+			<div class="card-header">
+				<h4 class="card-title">{{ document.titre }}</h4>
+			</div>
+			<div class="card-body">
+				<p>
+					<strong>Type :</strong>
+					{{ document.type }}</p>
+				<p>
+					<strong>Ajouté le :</strong>
+					{{ document.dateAjout|date('d/m/Y') }}</p>
+				<p>
+					<strong>Patient concerné :</strong>
+					{{ document.enfant }}</p>
+				<p>
+					<strong>Fichier :</strong>
+					<a href="{{ asset('uploads/documents/' ~ document.fichier) }}" target="_blank">Voir le fichier</a>
+				</p>
+			</div>
+			<div class="card-footer">
+				<a href="{{ path('app_document_edit', {'id': document.id}) }}" class="btn-primary">Modifier</a>
+				<a href="{{ path('app_document_delete', {'id': document.id}) }}" class="btn btn-danger">Supprimer</a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

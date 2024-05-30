@@ -1,61 +1,63 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ include('header/header.html.twig') }}
-    <div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
-        <div class="container mt-5 w-75 mb-5">
-             <div class="row g-2">
-                <form method="GET" action="{{ path('app_prendre_rdv') }}" class="d-flex flex-wrap">
-                    <div class="col-12 col-md-5 mb-2 mb-md-0">
-                        <input type="text" class="form-control" placeholder="🔍 Rechercher par spécialité" name="domaine" value="{{ app.request.query.get('domaine') }}"/>
-                    </div>
-                    <div class="col-12 col-md-5 mb-2 mb-md-0">
-                        <input type="text" class="form-control" placeholder="📍 Où ?" name="ville" value="{{ app.request.query.get('ville') }}"/>
-                    </div>
-                    <div class="col-12 col-md-2">
-                        <button type="submit" class="btn primary-btn w-100 fw-bold">Rechercher</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-8 p-0">
-                {% if pagination.items is empty %}
-                    <p class="text-center">Aucune donnée ne correspond à votre recherche.</p>
-                {% else %}
-                    {% for medecin in pagination %}
-                        <div class="w-100 w-md-75 m-auto mb-5 d-flex align-items-center justify-content-between" style="height: calc(33.33% - 16px);">
-                            <div class="d-flex align-items-center">
-                                <div class="rounded-circle border border-dark overflow-hidden" style="width: 150px; height: 150px;">
-                                    <img src="{{ asset('build/images/medecin.jpg') }}" alt="medecin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
-                                </div>
-                                <div class="d-flex flex-column ms-3">
-                                    <h3 class="lato-regular fw-bold">{{ medecin.prenom }} {{ medecin.nom }}</h3>
-                                    <p class="lato-regular-italic">{{ medecin.domaine }}</p>
-                                    <h5 class="lato-regular-italic mt-3">{{ medecin.adresse }}</h5>
-                                    <h5 class="lato-regular-italic">{{ medecin.codePostal }}, {{ medecin.ville }}</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center me-5">
-                                <a href="{{ path('app_rdv_medecin', {'id': medecin.id}) }}" class="btn btn-info lato-bold">Prendre un rendez-vous</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            </div>
-            <div class="col-md-4 d-none d-md-block p-0">
-                <img src="{{ asset('build/images/map.png') }}" alt="full block image" class="img-fluid h-100 w-100" style="object-fit: cover;">
-            </div>
-        </div>
-        {% if pagination.items is not empty %}
-            <div class="row mt-5">
-                <div class="col-md-8 p-0 d-flex justify-content-center align-items-center">
-                    {{ knp_pagination_render(pagination) }}
-                </div>
-            </div>
-        {% endif %}
-    </div>
-    {{ include('footer/footer.html.twig') }}
+	{{ include('header/header.html.twig') }}
+	<div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
+		<div class="container mt-5 w-75 mb-5">
+			<div class="row g-2">
+				<form method="GET" action="{{ path('app_prendre_rdv') }}" class="d-flex flex-wrap">
+					<div class="col-8 col-md-5 mb-2 mb-md-0">
+						<input type="text" class="form-control" placeholder="🔍 Rechercher par spécialité" name="domaine" value="{{ app.request.query.get('domaine') }}"/>
+					</div>
+					<div class="col-8 col-md-5 mb-2 mb-md-0">
+						<input type="text" class="form-control" placeholder="📍 Où ?" name="ville" value="{{ app.request.query.get('ville') }}"/>
+					</div>
+					<div class="col-8 col-md-2">
+						<button type="submit" class="primary-btn w-100 fw-bold">Rechercher</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container mt-5 mb-5">
+		<div class="row">
+			<div class="col-md-8 p-0">
+				{% if pagination.items is empty %}
+					<p class="text-center">Aucune donnée ne correspond à votre recherche.</p>
+				{% else %}
+					{% for medecin in pagination %}
+						<div class="w-100 w-md-75 m-auto mb-5 d-flex align-items-center justify-content-between" style="height: calc(33.33% - 16px);">
+							<div class="d-flex align-items-center">
+								<div class="rounded-circle border border-dark overflow-hidden" style="width: 150px; height: 150px;">
+									<img src="{{ asset('build/images/medecin.jpg') }}" alt="medecin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+								</div>
+								<div class="d-flex flex-column ms-3">
+									<h3 class="lato-regular fw-bold">{{ medecin.prenom }}
+										{{ medecin.nom }}</h3>
+									<p class="lato-regular-italic">{{ medecin.domaine }}</p>
+									<h5 class="lato-regular-italic mt-3">{{ medecin.adresse }}</h5>
+									<h5 class="lato-regular-italic">{{ medecin.codePostal }},
+										{{ medecin.ville }}</h5>
+								</div>
+							</div>
+							<div class="d-flex align-items-center me-5">
+								<a href="{{ path('app_rdv_medecin', {'id': medecin.id}) }}" class="primary-btn lato-bold">Prendre un rendez-vous</a>
+							</div>
+						</div>
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class="col-md-4 d-none d-md-block p-0">
+				<img src="{{ asset('build/images/map.png') }}" alt="full block image" class="img-fluid h-100 w-100" style="object-fit: cover;">
+			</div>
+		</div>
+		{% if pagination.items is not empty %}
+			<div class="row mt-5">
+				<div class="col-md-8 p-0 d-flex justify-content-center align-items-center">
+					{{ knp_pagination_render(pagination) }}
+				</div>
+			</div>
+		{% endif %}
+	</div>
+	{{ include('footer/footer.html.twig') }}
 {% endblock %}

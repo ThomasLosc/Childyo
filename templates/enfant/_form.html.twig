@@ -1,37 +1,37 @@
 <div class="container-register m-auto mt-5 mb-5">
-    {% if app.request.attributes.get('_route') == 'app_enfant_edit' %}
-    <h1 class="text-center text-blue fw-bold">Modifier un enfant</h1>
-{% elseif app.request.attributes.get('_route') == 'app_enfant_new' %}
-    <h1 class="text-center text-blue fw-bold">Ajouter un enfant</h1>
-{% endif %}
+	{% if app.request.attributes.get('_route') == 'app_enfant_edit' %}
+		<h1 class="text-center text-blue fw-bold">Modifier un enfant</h1>
+	{% elseif app.request.attributes.get('_route') == 'app_enfant_new' %}
+		<h1 class="text-center text-blue fw-bold">Ajouter un enfant</h1>
+	{% endif %}
 </div>
 {{ form_start(form) }}
 <div class="container-fluid w-50 m-auto border rounded-3 p-3 mb-3">
-    <div class="row">
-        <div class="col-md-6 col-12 form-group-custom">
-            {{ form_row(form.genre) }}
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-md-6 col-12 form-group-custom">
-            {{ form_row(form.nom) }}
-        </div>
-        <div class="col-md-6 col-12 form-group-custom">
-            {{ form_row(form.prenom) }}
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 form-group-custom">
-            {{ form_row(form.dateNaissance) }}
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12 form-group-custom">
-            {{ form_row(form.medecinTraitant) }}
-        </div>
-    </div>
-  <div class="text-center mt-4">
-        <button type="submit" class="btn primary-btn fw-bold">Valider les informations</button>
-    </div>
+	<div class="row">
+		<div class="col-md-6 col-12 form-group-custom">
+			{{ form_row(form.genre) }}
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-md-6 col-12 form-group-custom">
+			{{ form_row(form.nom) }}
+		</div>
+		<div class="col-md-6 col-12 form-group-custom">
+			{{ form_row(form.prenom) }}
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-12 form-group-custom">
+			{{ form_row(form.dateNaissance) }}
+		</div>
+	</div>
+	<div class="row mt-3">
+		<div class="col-12 form-group-custom">
+			{{ form_row(form.medecinTraitant) }}
+		</div>
+	</div>
+	<div class="text-center mt-4">
+		<button type="submit" class="primary-btn fw-bold">Valider les informations</button>
+	</div>
 </div>
 {{ form_end(form) }}

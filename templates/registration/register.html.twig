@@ -1,79 +1,79 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ include('header/header.html.twig') }}
-    <div class="container-register m-auto w-90 mt-5">
-        <h1 class="text-center text-blue fw-bold">Inscrivez-vous sur Childyo&nbsp;!</h1>
-    </div>
-    {{ form_start(registrationForm) }}
-    <div class="container-fluid w-75 p-0 m-auto" style="max-width: 800px;">
-        {{ form_errors(registrationForm) }}
-        {% for flash_error in app.flashes('verify_email_error') %}
-            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
-        {% endfor %}
-        <div class="row mt-5">
-            <div class="col-md-6 col-12 form-group-custom">
-                {{ form_row(registrationForm.nom) }}
-            </div>
-            <div class="col-md-6 col-12 form-group-custom">
-                {{ form_row(registrationForm.prenom) }}
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 form-group-custom">
-                {{ form_row(registrationForm.telephone) }}
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-12 form-group-custom">
-                {{ form_row(registrationForm.email) }}
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-md-6 col-12 form-group-custom">
-                <label for="{{ registrationForm.plainPassword.first.vars.id }}" class="form-label fw-bold">Mot de passe *</label>
-                <div class="input-group">
-                    {{ form_widget(registrationForm.plainPassword.first, { 'attr': {'class': 'form-control', 'autocomplete': 'new-password'} }) }}
-                    <span class="input-group-text text-dark border-blue" onclick="togglePassword('{{ registrationForm.plainPassword.first.vars.id }}')">
-                        <i class="bi bi-eye-fill" id="togglePasswordIcon_{{ registrationForm.plainPassword.first.vars.id }}"></i>
-                    </span>
-                </div>
-            </div>
-            <div class="col-md-6 col-12 form-group-custom">
-                <label for="{{ registrationForm.plainPassword.second.vars.id }}" class="form-label fw-bold">Confirmer le mot de passe *</label>
-                <div class="input-group">
-                    {{ form_widget(registrationForm.plainPassword.second, { 'attr': {'class': 'form-control', 'autocomplete': 'new-password'} }) }}
-                    <span class="input-group-text text-dark border-blue" onclick="togglePassword('{{ registrationForm.plainPassword.second.vars.id }}')">
-                        <i class="bi bi-eye-fill" id="togglePasswordIcon_{{ registrationForm.plainPassword.second.vars.id }}"></i>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <div class="w-50 m-auto mt-4" style="min-width: fit-content;">
-            <button type="submit" class="btn primary-btn w-100 fw-bold">Créer un compte</button>
-        </div>
-        <div class="mt-4 w-90 m-auto text-center mb-5">
-            <span>J'ai déjà un compte&nbsp;?
-            </span>
-            <a href="{{ path('app_login') }}" class="text-center fw-bold text-black">Je me connecte</a>
-        </div>
-    </div>
-    {{ form_end(registrationForm) }}
-    {{ include('footer/footer.html.twig') }}
+	{{ include('header/header.html.twig') }}
+	<div class="container-register m-auto w-90 mt-5">
+		<h1 class="text-center text-blue fw-bold">Inscrivez-vous sur Childyo&nbsp;!</h1>
+	</div>
+	{{ form_start(registrationForm) }}
+	<div class="container-fluid w-75 p-0 m-auto" style="max-width: 800px;">
+		{{ form_errors(registrationForm) }}
+		{% for flash_error in app.flashes('verify_email_error') %}
+			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+		{% endfor %}
+		<div class="row mt-5">
+			<div class="col-md-6 col-12 form-group-custom">
+				{{ form_row(registrationForm.nom) }}
+			</div>
+			<div class="col-md-6 col-12 form-group-custom">
+				{{ form_row(registrationForm.prenom) }}
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-12 form-group-custom">
+				{{ form_row(registrationForm.telephone) }}
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-12 form-group-custom">
+				{{ form_row(registrationForm.email) }}
+			</div>
+		</div>
+		<div class="row mt-3">
+			<div class="col-md-6 col-12 form-group-custom">
+				<label for="{{ registrationForm.plainPassword.first.vars.id }}" class="form-label fw-bold">Mot de passe *</label>
+				<div class="input-group">
+					{{ form_widget(registrationForm.plainPassword.first, { 'attr': {'class': 'form-control', 'autocomplete': 'new-password'} }) }}
+					<span class="input-group-text text-dark border-blue" onclick="togglePassword('{{ registrationForm.plainPassword.first.vars.id }}')">
+						<i class="bi bi-eye-fill" id="togglePasswordIcon_{{ registrationForm.plainPassword.first.vars.id }}"></i>
+					</span>
+				</div>
+			</div>
+			<div class="col-md-6 col-12 form-group-custom">
+				<label for="{{ registrationForm.plainPassword.second.vars.id }}" class="form-label fw-bold">Confirmer le mot de passe *</label>
+				<div class="input-group">
+					{{ form_widget(registrationForm.plainPassword.second, { 'attr': {'class': 'form-control', 'autocomplete': 'new-password'} }) }}
+					<span class="input-group-text text-dark border-blue" onclick="togglePassword('{{ registrationForm.plainPassword.second.vars.id }}')">
+						<i class="bi bi-eye-fill" id="togglePasswordIcon_{{ registrationForm.plainPassword.second.vars.id }}"></i>
+					</span>
+				</div>
+			</div>
+		</div>
+		<div class="w-50 m-auto mt-4" style="min-width: fit-content;">
+			<button type="submit" class="primary-btn w-100 fw-bold">Créer un compte</button>
+		</div>
+		<div class="mt-4 w-90 m-auto text-center mb-5">
+			<span>J'ai déjà un compte&nbsp;?
+			</span>
+			<a href="{{ path('app_login') }}" class="text-center fw-bold text-black">Je me connecte</a>
+		</div>
+	</div>
+	{{ form_end(registrationForm) }}
+	{{ include('footer/footer.html.twig') }}
 
-    <script>
-        function togglePassword(id) {
-            const passwordInput = document.getElementById(id);
-            const togglePasswordIcon = document.getElementById('togglePasswordIcon_' + id);
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                togglePasswordIcon.classList.remove('bi-eye-fill');
-                togglePasswordIcon.classList.add('bi-eye-slash-fill');
-            } else {
-                passwordInput.type = 'password';
-                togglePasswordIcon.classList.remove('bi-eye-slash-fill');
-                togglePasswordIcon.classList.add('bi-eye-fill');
-            }
-        }
-    </script>
+	<script>
+		function togglePassword(id) {
+const passwordInput = document.getElementById(id);
+const togglePasswordIcon = document.getElementById('togglePasswordIcon_' + id);
+if (passwordInput.type === 'password') {
+passwordInput.type = 'text';
+togglePasswordIcon.classList.remove('bi-eye-fill');
+togglePasswordIcon.classList.add('bi-eye-slash-fill');
+} else {
+passwordInput.type = 'password';
+togglePasswordIcon.classList.remove('bi-eye-slash-fill');
+togglePasswordIcon.classList.add('bi-eye-fill');
+}
+}
+	</script>
 {% endblock %}

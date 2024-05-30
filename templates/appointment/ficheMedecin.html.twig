@@ -1,81 +1,83 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ include('header/header.html.twig') }}
-    <div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
-        <div class="container mt-5 w-75 mb-5">
-             <div class="w-100 w-md-75 m-auto mb-5 d-flex align-items-center justify-content-between" style="height: calc(33.33% - 16px);">
-                <div class="d-flex align-items-center">
-                    <div class="rounded-circle border border-dark overflow-hidden" style="width: 150px; height: 150px;">
-                        <img src="{{ asset('build/images/medecin.jpg') }}" alt="medecin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="d-flex flex-column ms-3">
-                        <h3 class="lato-regular text-white fw-bold">{{ medecin.prenom }} {{ medecin.nom }}</h3>
-                        <p class="lato-regular-italic text-white">{{ medecin.domaine }}</p>
-                        <h5 class="lato-regular-italic text-white mt-3">{{ medecin.adresse }}</h5>
-                        <h5 class="lato-regular-italic text-white">{{ medecin.codePostal }}, {{ medecin.ville }}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="container mb-5 mt-5 m-auto">
-        <div class="row">
-            <div class="col-md-8 d-flex flex-column">
-                <div class="card mb-5 flex-fill">
-                    <div class="card-header primary-btn d-flex justify-content-between align-items-center">
-                        <h5 class="card-title lato-bold mb-0">Tarifs et remboursements</h5>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-text mb-2 fw-bold">Mode de paiement</h5>
-                        <p class="card-text mb-3">Espèces / Chèque / Carte bancaire</p>
-                        <h5 class="card-text mb-2 fw-bold">Tarifs</h5>
-                        <p class="card-text mb-3">Consultation : 60 - 70 € / Téléconsultation : 25 € / Examen obligatoire de l'enfant : 47€</p>
-                    </div>
-                </div>
-                <div class="card flex-fill">
-                    <div class="card-header primary-btn d-flex justify-content-between align-items-center">
-                        <h5 class="card-title lato-bold mb-0">Informations d'accès</h5>
-                    </div>
-                    <div class="card-body">
-                        <p class="card-text mb-3">19 RUE PONSCARME 75013 Paris</p>
-                        <h5 class="card-text mb-2 fw-bold">Moyen de transport</h5>
-                        <p class="card-text mb-3">Métro OLYMPIADES / BUS 62 /64</p>
-                        <h5 class="card-text mb-2 fw-bold">Informations pratiques</h5>
-                        <p class="card-text mb-3">Rez-de-chaussée / Parking / gratuit</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 d-flex flex-column">
-                <div class="card flex-fill">
-                    <div class="card-header primary-btn text-center">
-                        <h5 class="card-title lato-bold mb-0 text-center">Prendre un rendez-vous en ligne</h5>
-                    </div>
-                    <div class="card-body">
-                        {{ form_start(form) }}
-                            <div class="mt-3">
-                                {{ form_row(form.typeConsultation) }}
-                            </div>
-                            <div class="mt-3">
-                                {{ form_row(form.enfant) }}
-                            </div>
-                            <div class="mt-3">
-                                {{ form_row(form.motif) }}
-                            </div>
-                            <div class="mt-3">
-                                {{ form_row(form.date) }}
-                            </div>
-                            <div class="mt-5 text-center">
-                                <button type="submit" class="btn btn-info fw-bold" value="Prendre rendez-vous">
-                                    Confirmer le rendez-vous
-                                </button>
-                            </div>
-                        {{ form_end(form) }}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{ include('footer/footer.html.twig') }}
+	{{ include('header/header.html.twig') }}
+	<div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
+		<div class="container mt-5 w-75 mb-5">
+			<div class="w-100 w-md-75 m-auto mb-5 d-flex align-items-center justify-content-between" style="height: calc(33.33% - 16px);">
+				<div class="d-flex align-items-center">
+					<div class="rounded-circle border border-dark overflow-hidden" style="width: 150px; height: 150px;">
+						<img src="{{ asset('build/images/medecin.jpg') }}" alt="medecin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;">
+					</div>
+					<div class="d-flex flex-column ms-3">
+						<h3 class="lato-regular text-white fw-bold">{{ medecin.prenom }}
+							{{ medecin.nom }}</h3>
+						<p class="lato-regular-italic text-white">{{ medecin.domaine }}</p>
+						<h5 class="lato-regular-italic text-white mt-3">{{ medecin.adresse }}</h5>
+						<h5 class="lato-regular-italic text-white">{{ medecin.codePostal }},
+							{{ medecin.ville }}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container mb-5 mt-5 m-auto">
+		<div class="row">
+			<div class="col-md-8 d-flex flex-column">
+				<div class="card mb-5 flex-fill">
+					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
+						<h5 class="card-title lato-bold mb-0">Tarifs et remboursements</h5>
+					</div>
+					<div class="card-body">
+						<h5 class="card-text mb-2 fw-bold">Mode de paiement</h5>
+						<p class="card-text mb-3">Espèces / Chèque / Carte bancaire</p>
+						<h5 class="card-text mb-2 fw-bold">Tarifs</h5>
+						<p class="card-text mb-3">Consultation : 60 - 70 € / Téléconsultation : 25 € / Examen obligatoire de l'enfant : 47€</p>
+					</div>
+				</div>
+				<div class="card flex-fill">
+					<div class="card-header primary-btn d-flex justify-content-between align-items-center">
+						<h5 class="card-title lato-bold mb-0">Informations d'accès</h5>
+					</div>
+					<div class="card-body">
+						<p class="card-text mb-3">19 RUE PONSCARME 75013 Paris</p>
+						<h5 class="card-text mb-2 fw-bold">Moyen de transport</h5>
+						<p class="card-text mb-3">Métro OLYMPIADES / BUS 62 /64</p>
+						<h5 class="card-text mb-2 fw-bold">Informations pratiques</h5>
+						<p class="card-text mb-3">Rez-de-chaussée / Parking / gratuit</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 d-flex flex-column">
+				<div class="card flex-fill">
+					<div class="card-header primary-btn text-center">
+						<h5 class="card-title lato-bold mb-0 text-center">Prendre un rendez-vous en ligne</h5>
+					</div>
+					<div class="card-body">
+						{{ form_start(form) }}
+						<div class="mt-3">
+							{{ form_row(form.typeConsultation) }}
+						</div>
+						<div class="mt-3">
+							{{ form_row(form.enfant) }}
+						</div>
+						<div class="mt-3">
+							{{ form_row(form.motif) }}
+						</div>
+						<div class="mt-3">
+							{{ form_row(form.date) }}
+						</div>
+						<div class="mt-5 text-center">
+							<button type="submit" class="primary-btn fw-bold" value="Prendre rendez-vous">
+								Confirmer le rendez-vous
+							</button>
+						</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{ include('footer/footer.html.twig') }}
 {% endblock %}

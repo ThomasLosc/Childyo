@@ -4,7 +4,7 @@
 	{{ include('header/header.html.twig') }}
 	{% if app.user %}
 		<div class="container">
-			<a href="{{ path('app_dashboard') }}" class="btn primary-btn w-25 justify-content-center fw-bold mt-3 d-flex align-items-center">
+			<a href="{{ path('app_dashboard') }}" class="primary-btn w-25 justify-content-center fw-bold mt-3 d-flex align-items-center">
 				<i class="bi bi-arrow-left me-3 fs-5"></i>
 				Revenir au tableau de bord
 			</a>
@@ -27,7 +27,7 @@
 					<input type="text" class="form-control" placeholder="📍 Où ?"/>
 				</div>
 				<div class="col-12 col-md-2">
-					<button class="btn primary-btn w-100 fw-bold" style="min-width: fit-content;">Rechercher</button>
+					<button class="primary-btn w-100 fw-bold" style="min-width: fit-content;">Rechercher</button>
 				</div>
 			</div>
 		</div>

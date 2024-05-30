@@ -86,6 +86,12 @@ body {
 .primary-btn {
     background-color: #0FCFB7;
     color: #000000;
+    padding: 6px 16px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .w-95 {

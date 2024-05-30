@@ -38,7 +38,7 @@
 				{% if isCsrfProtectionEnabled %}
 					<input type="hidden" name="{{ csrfParameterName }}" value="{{ csrf_token(csrfTokenId) }}">
 				{% endif %}
-				<button class="btn primary-btn w-100 fw-bold mt-4" type="submit" value="{{ "Valider le code"|trans({}, 'SchebTwoFactorBundle') }}">Valider le code</button>
+				<button class="primary-btn w-100 fw-bold mt-4" type="submit" value="{{ "Valider le code"|trans({}, 'SchebTwoFactorBundle') }}">Valider le code</button>
 			</form>
 		</div>
 	</div>
