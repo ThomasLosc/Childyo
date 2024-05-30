@@ -48,6 +48,10 @@
     margin-right: 10px;
 }
 
+.border-blue {
+    border-color: #003366;
+}
+
 /* Ajout de class */
 
 body {
