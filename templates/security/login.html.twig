@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-6 d-flex flex-column justify-content-start">
-				<div class="mx-auto my-md-auto">
-					<div class="mx-2">
-						{# <span style="font-size: 20px; line-height: normal;margin-right: 5px;">⇤</span> #}
-						<a href="/" class="secondary-btn mt-4 mb-3">⇦&nbsp;&nbsp;Retour à l'accueil</a>
-						<h1 class="text-blue fw-bold text-center">Connectez-vous sur Childyo&nbsp;!</h1>
+	<div class="container-fluid full-height">
+		<div class="row full-height">
+			<div class="col-lg-6 d-flex flex-column justify-content-center">
+				<div class="m-auto">
+					<div class="my-4 w-75 mb-5">
+						<a href="{{ path('app_home') }}" class="fw-bold text-black primary-btn"><i class="bi bi-arrow-left-circle me-2"></i>Revenir au menu</a>
 					</div>
+					<h1 class="text-blue fw-bold text-center w-90 m-auto">Connectez-vous sur Childyo&nbsp;!</h1>
 					<form method="post">
 						{% if error %}
 							<div class="alert alert-danger mt-3 text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
