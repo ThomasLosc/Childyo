@@ -158,7 +158,7 @@ class Medecin
 
     public function setVille(string $ville): static
     {
-        $this->Ville = $ville;
+        $this->ville = $ville;
 
         return $this;
     }
