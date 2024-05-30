@@ -32,6 +32,10 @@ class AppFixtures extends Fixture
             $medecin->setPrenom($faker->firstName);
             $medecin->setPhoto($faker->imageUrl(640, 480, 'people'));
             $medecin->setDomaine($faker->word);
+            $medecin->setVille($faker->city);
+            $medecin->setAdresse($faker->address);
+            $medecin->setCodePostal($faker->postcode);
+
 
             $manager->persist($medecin);
             $medecins[] = $medecin;

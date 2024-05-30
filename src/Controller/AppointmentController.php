@@ -9,6 +9,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
+use App\Entity\RendezVous;
+use App\Form\RendezVousType;
+use Doctrine\ORM\EntityManagerInterface;
 
 class AppointmentController extends AbstractController
 {
@@ -49,14 +52,26 @@ class AppointmentController extends AbstractController
     }
 
     #[Route('/rendez-vous/{id}', name: 'app_rdv_medecin', methods: ['GET', 'POST'])]
-    public function rendezVousMedecin(Medecin $medecin): Response
+    public function rendezVousMedecin(Medecin $medecin, Request $request, EntityManagerInterface $entityManager): Response
     {
         if ($this->getUser() === null) {
             return $this->redirectToRoute('app_login');
         }
 
+        $rendezVous = new RendezVous();
+        $form = $this->createForm(RendezVousType::class, $rendezVous);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $rendezVous->setMedecin($medecin);
+            $entityManager->persist($rendezVous);
+            $entityManager->flush();
+            return $this->redirectToRoute('app_appointment', [], Response::HTTP_SEE_OTHER);
+        }
+
         return $this->render('appointment/ficheMedecin.html.twig', [
             'medecin' => $medecin,
+            'form' => $form->createView(),
         ]);
     }
 }

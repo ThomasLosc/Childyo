@@ -187,6 +187,10 @@ body {
     border: 1px solid #003366;
 }
 
+.form-select {
+    border: 1px solid #003366;
+}
+
 .form-check-input {
     border: 1px solid #003366;
     margin-top: -1px;
