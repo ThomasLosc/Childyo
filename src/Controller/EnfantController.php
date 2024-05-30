@@ -17,6 +17,10 @@ class EnfantController extends AbstractController
     #[Route('/new', name: 'app_enfant_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $enfant = new Enfant();
         $form = $this->createForm(EnfantType::class, $enfant);
         $form->handleRequest($request);
@@ -38,6 +42,10 @@ class EnfantController extends AbstractController
     #[Route('/{id}', name: 'app_enfant_show', methods: ['GET'])]
     public function show(Enfant $enfant): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         return $this->render('enfant/show.html.twig', [
             'enfant' => $enfant,
         ]);
@@ -46,6 +54,10 @@ class EnfantController extends AbstractController
     #[Route('/{id}/edit', name: 'app_enfant_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Enfant $enfant, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $form = $this->createForm(EnfantType::class, $enfant);
         $form->handleRequest($request);
 
@@ -64,6 +76,10 @@ class EnfantController extends AbstractController
     #[Route('/{id}', name: 'app_enfant_delete', methods: ['POST'])]
     public function delete(Request $request, Enfant $enfant, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+        
         if ($this->isCsrfTokenValid('delete' . $enfant->getId(), $request->request->get('_token'))) {
             $entityManager->remove($enfant);
             $entityManager->flush();

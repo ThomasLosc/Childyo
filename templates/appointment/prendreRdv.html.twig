@@ -3,22 +3,22 @@
 {% block body %}
 	{{ include('header/header.html.twig') }}
 	<div class="container-fluid mb-5 m-auto w-100 d-flex flex-column align-items-center justify-content-center flex-grow-1 bg-blue">
-		<div class="container mt-5 w-75 mb-5">
-			<div class="row g-2">
-				<form method="GET" action="{{ path('app_prendre_rdv') }}" class="d-flex flex-wrap">
-					<div class="col-8 col-md-5 mb-2 mb-md-0">
-						<input type="text" class="form-control" placeholder="🔍 Rechercher par spécialité" name="domaine" value="{{ app.request.query.get('domaine') }}"/>
-					</div>
-					<div class="col-8 col-md-5 mb-2 mb-md-0">
-						<input type="text" class="form-control" placeholder="📍 Où ?" name="ville" value="{{ app.request.query.get('ville') }}"/>
-					</div>
-					<div class="col-8 col-md-2">
-						<button type="submit" class="primary-btn w-100 fw-bold">Rechercher</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+        <div class="container mt-5 mb-5">
+            <div class="row g-2 w-100">
+                <form method="GET" action="{{ path('app_prendre_rdv') }}" class="d-flex flex-wrap justify-content-center">
+                    <div class="col-12 col-md-5 mb-2 mb-md-0">
+                        <input type="text" class="form-control w-100" placeholder="🔍 Rechercher par spécialité" name="domaine" value="{{ app.request.query.get('domaine') }}"/>
+                    </div>
+                    <div class="col-12 col-md-5 mb-2 mb-md-0">
+                        <input type="text" class="form-control w-100" placeholder="📍 Où ?" name="ville" value="{{ app.request.query.get('ville') }}"/>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <button type="submit" class="primary-btn w-100 fw-bold mt-2 mt-md-0">Rechercher</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 	<div class="container mt-5 mb-5">
 		<div class="row">
 			<div class="col-md-8 p-0">

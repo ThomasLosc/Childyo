@@ -152,6 +152,10 @@ body {
     .navbar-nav .nav-item a {
         margin-right: inherit!important;
     }
+
+    .mobile-mt {
+        margin-top: 2rem;
+    }
 }
 
 .navbar-brand {

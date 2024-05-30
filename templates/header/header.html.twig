@@ -9,61 +9,39 @@
 				<path d="M3 18h18M3 6h18M3 12h18"></path>
 			</svg>
 		</button>
+
 		<div class="collapse navbar-collapse justify-content-between" id="navbarNav">
 			<a class="navbar-brand d-none d-lg-flex" href="{{ path('app_home') }}">
 				<img src="{{ asset('build/images/logo.webp') }}" alt="logo" style="width: 100px;">
 				<h4 class="text-white lato-bold">Childyo</h4>
 			</a>
+			{% if app.user %}
 			<ul class="navbar-nav">
-				{% if app.user %}
-					<li class="nav-item">
-						<a class="text-white mx-lg-5 text-decoration-none fs-5" href="{{ path('app_appointment') }}">Rendez-vous</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-white mx-lg-5 text-decoration-none fs-5" href="{{ path('app_document') }}">Documents</a>
-					</li>
-					<li class="nav-item">
-						<a class="text-white mx-lg-5 text-decoration-none fs-5" href="#">Blog</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="btn btn-light text-blue lato-bold dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							{{ app.user.prenom }}
-							{{ app.user.nom }}
-						</a>
-						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-							<li>
-								<a class="dropdown-item" href="{{ path('app_profil') }}">Mon profil</a>
-							</li>
-							<li><hr class="dropdown-divider"></li>
-							<li>
-								<a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a>
-							</li>
-						</ul>
-					</li>
-				{% else %}
-					<li class="nav-item">
-						<a class="btn btn-outline-light me-3 lato-bold" href="{{ path('app_register') }}">S'inscrire</a>
-					</li>
-					<li class="nav-item">
-						<a class="btn btn-light text-blue lato-bold" href="{{ path('app_login') }}">Se connecter</a>
-					</li>
-				{% endif %}
+				<li class="nav-item">
+					<a class="text-white mx-lg-5 text-decoration-none fs-5" href="{{ path('app_appointment') }}">Rendez-vous</a>
+				</li>
+				<li class="nav-item">
+					<a class="text-white mx-lg-5 text-decoration-none fs-5" href="{{ path('app_document') }}">Documents</a>
+				</li>
+				<li class="nav-item">
+					<a class="text-white mx-lg-5 text-decoration-none fs-5" href="#">Blog</a>
+				</li>	
+			</ul>
+			{% endif %}
+			<ul class="navbar-nav">
+			{% if app.user %}
+				<li class="nav-item">
+					<a class="btn btn-light text-blue lato-bold mobile-mt" href="{{ path('app_profil') }}">{{ app.user.prenom }} {{ app.user.nom }}</a>
+				</li>
+			{% else %}
+				<li class="nav-item">
+					<a class="btn btn-outline-light me-3 lato-bold mobile-mt" href="{{ path('app_register') }}">S'inscrire</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn btn-light text-blue lato-bold" href="{{ path('app_login') }}">Se connecter</a>
+				</li>
+			{% endif %}
 			</ul>
 		</div>
 	</div>
 </nav>
-
-
-{# <nav class="navbar navbar-expand-lg navbar-custom">
-	<div class="container-fluid w-90 menu d-flex justify-content-between align-items-center">
-		<a class="navbar-brand text-white lato-bold d-lg-none" href="{{ path('app_home') }}">
-			<img src="{{ asset('build/images/logo.webp') }}" alt="Childyo Logo" style="width: 100px;"/>
-			<h4 class="lato-bold">Childyo</h4>
-		</a>
-		<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-				<path d="M3 18h18M3 6h18M3 12h18"></path>
-			</svg>
-		</button>
-	</div>
-</nav> #}

@@ -19,6 +19,10 @@ class DocumentController extends AbstractController
     #[Route('/documents', name: 'app_document')]
     public function index(DocumentRepository $document): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $documents = $document->findAll();
 
         return $this->render('document/index.html.twig', [
@@ -29,6 +33,10 @@ class DocumentController extends AbstractController
     #[Route('/document/new', name: 'app_document_new')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $document = new Document();
         $form = $this->createForm(DocumentType::class, $document);
         $form->handleRequest($request);
@@ -65,6 +73,10 @@ class DocumentController extends AbstractController
     #[Route('/document/{id}/edit', name: 'app_document_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Document $document, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $form = $this->createForm(DocumentType::class, $document);
         $form->handleRequest($request);
 
@@ -83,6 +95,10 @@ class DocumentController extends AbstractController
     #[Route('/document/{id}/show', name: 'document_show')]
     public function show(Document $document): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         return $this->render('document/show.html.twig', [
             'document' => $document,
         ]);
@@ -91,6 +107,10 @@ class DocumentController extends AbstractController
     #[Route('/document/{id}', name: 'app_document_delete', methods: ['POST'])]
     public function delete(Request $request, Document $document, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+        
         if ($this->isCsrfTokenValid('delete' . $document->getId(), $request->request->get('_token'))) {
             $entityManager->remove($document);
             $entityManager->flush();

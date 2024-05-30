@@ -18,6 +18,10 @@ class ProfilController extends AbstractController
     #[Route('/profil', name: 'app_profil')]
     public function index(EnfantRepository $enfant): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $enfants = $enfant->findBy(['user' => $this->getUser()]);
 
         return $this->render('profil/index.html.twig', [
@@ -29,6 +33,10 @@ class ProfilController extends AbstractController
     #[Route('/{id}/profil', name: 'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, EntityManagerInterface $entityManager): Response
     {
+        if ($this->getUser() === null) {
+            return $this->redirectToRoute('app_login');
+        }
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
