@@ -40,6 +40,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     #[ORM\Column]
     private array $roles = [];
 
+    #[ORM\Column(type: 'string', length: 100)]
+    private $resetToken;
+
     /**
      * @var string The hashed password
      */
@@ -159,6 +162,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     public function setPassword(string $password): static
     {
         $this->password = $password;
+
+        return $this;
+    }
+
+    public function getResetToken(): ?string
+    {
+        return $this->resetToken;
+    }
+
+    public function setResetToken(?string $resetToken): self
+    {
+        $this->resetToken = $resetToken;
 
         return $this;
     }

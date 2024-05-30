@@ -24,7 +24,7 @@
 							</div>
 						</div>
 						<div class="mt-2 w-75 m-auto">
-							<a href="#" class="float-end fw-bold text-black mb-5">Mot de passe oublié ?</a>
+							<a href="{{ path('forgotten_password') }}" class="float-end fw-bold text-black mb-5">Mot de passe oublié ?</a>
 						</div>
 						<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
 						<div class="mt-5 w-75 m-auto">
