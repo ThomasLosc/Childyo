@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<div class="container-fluid full-height">
-		<div class="row full-height">
-			<div class="col-lg-6 d-flex flex-column justify-content-center">
-				<div class="m-auto">
-					<h1 class="text-blue fw-bold text-center w-90 m-auto">Connectez-vous sur Childyo&nbsp;!</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-6 d-flex flex-column justify-content-start">
+				<div class="mx-auto my-md-auto">
+					<div class="mx-2">
+						{# <span style="font-size: 20px; line-height: normal;margin-right: 5px;">⇤</span> #}
+						<a href="/" class="secondary-btn mt-4 mb-3">⇦&nbsp;&nbsp;Retour à l'accueil</a>
+						<h1 class="text-blue fw-bold text-center">Connectez-vous sur Childyo&nbsp;!</h1>
+					</div>
 					<form method="post">
 						{% if error %}
 							<div class="alert alert-danger mt-3 text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -30,14 +34,14 @@
 						<div class="mt-5 w-75 m-auto">
 							<button type="submit" class="primary-btn w-100 fw-bold">Se connecter</button>
 						</div>
-						<div class="mt-4 w-75 m-auto text-center">
+						<div class="my-4 w-75 m-auto text-center">
 							<span>Nouvel utilisateur ?</span>
 							<a href="{{ path('app_register') }}" class="text-center fw-bold text-black">Inscrivez-vous</a>
 						</div>
 					</form>
 				</div>
 			</div>
-			<div class="col-lg-6 d-none d-lg-block bg-image-login"></div>
+			<div class="col-lg-6 d-none d-lg-block bg-image-login full-height"></div>
 		</div>
 	</div>
 
