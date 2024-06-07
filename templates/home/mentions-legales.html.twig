@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('header/header.html.twig') }}
+    {% if app.user %}
+        <div class="container">
+            <a href="{{ path('app_dashboard') }}" class="primary-btn w-25 justify-content-center fw-bold mt-3 d-flex align-items-center">
+                <i class="bi bi-arrow-left me-3 fs-5"></i>
+                Revenir au tableau de bord
+            </a>
+        </div>
+    {% endif %}
+
+
+    <!-- Section CGU -->
+    <section class="container-fluid bg-lightgray py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mt-4">
+                    <h2 class="h1 m-0 fw-bolder text-center mb-3">Mentions légales</h2>
+                </div>
+
+                <div class="col-12 mt-4 bg-light rounded shadow p-4 border">
+
+                    <div class="small text-muted">Dernière mise à jour: 07/06/2024</div>
+                    <div class="sep-title-start mb-5" id="legals">
+                        <h2 class="title-3 fw-bold">Mentions légales</h2>
+                    </div>
+
+                    <h3 class="title-3 mb-2 fw-bold font-1-4x">Informations générales</h3>
+                    <p class="mb-4 font-1-1x">
+                        Childyo<br>
+                        Siège social : 61 rue de Lyon, 75012 Paris<br>
+                        Siret : 91112676100012<br>
+                        R.C.S. Boulogne A 911 126 761
+                    </p>
+                    <p class="mb-4 font-1-1x">
+                        Responsable de publication: Chilyo<br>
+                        Mail: contact@childyo.fr
+                    </p>
+
+                    <h3 class="title-3 mb-2 fw-bold font-1-4x">Hébergement</h3>
+                    <p class="mb-4 font-1-1x">
+                        L'hébergement du site est assuré par AZNETWORK.<br>
+                    </p><ul>
+                        <li>Site web : <a href="https://aznetwork.eu" target="_blank" rel="noopener" title="AZNETWORK">aznetwork.eu</a></li>
+                    </ul>
+                    <p></p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    {{ include('footer/footer.html.twig') }}
+    </div>{% endblock %}
