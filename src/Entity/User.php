@@ -3,12 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use App\Validator\TelephoneValidator;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Scheb\TwoFactorBundle\Model\Email\TwoFactorInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFactorInterface
@@ -25,10 +29,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, TwoFact
     private ?string $prenom = null;
 
     #[ORM\Column(length: 10)]
+    #[Assert\NotBlank]
+    #[TelephoneValidator]
     private ?int $telephone = null;
 
-    
     #[ORM\Column(length: 180, unique: true)]
+    #[Assert\NotBlank]
+    #[Assert\Email]
     private ?string $email = null;
 
     #[ORM\Column(length: 255, nullable: true)]

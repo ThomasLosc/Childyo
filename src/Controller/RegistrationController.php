@@ -26,17 +26,23 @@ class RegistrationController extends AbstractController
     }
 
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, SecurityAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
-    {
-        if ($this->getUser()) {
-            return $this->redirectToRoute('app_dashboard');
-        }
-        
-        $user = new User();
-        $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
+public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, SecurityAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
+{
+    if ($this->getUser()) {
+        return $this->redirectToRoute('app_dashboard');
+    }
+    
+    $user = new User();
+    $form = $this->createForm(RegistrationFormType::class, $user);
+    $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+    if ($form->isSubmitted() && $form->isValid()) {
+        // Check if email already exists
+        $existingUser = $entityManager->getRepository(User::class)->findOneBy(['email' => $user->getEmail()]);
+        if ($existingUser) {
+            $this->addFlash('error', 'L\'email est déjà utilisé.');
+            return $this->redirectToRoute('app_register');
+        } else {
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -44,7 +50,7 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-
+            
             $entityManager->persist($user);
             $entityManager->flush();
 
@@ -56,11 +62,16 @@ class RegistrationController extends AbstractController
                 $request
             );
         }
-
-        return $this->render('registration/register.html.twig', [
-            'registrationForm' => $form->createView(),
-        ]);
     }
+    elseif ($form->isSubmitted() && !$form->isValid()){
+        $this->addFlash('error', 'Les mots de passe ne correspondent pas ou ne sont pas valides.');
+        return $this->redirectToRoute('app_register');
+        }
+
+    return $this->render('registration/register.html.twig', [
+        'registrationForm' => $form->createView(),
+    ]);
+}
 
     #[Route('/verify/email', name: 'app_verify_email')]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response

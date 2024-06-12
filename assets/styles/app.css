@@ -137,7 +137,10 @@ body {
 .me-6{
     margin-right: 5rem !important;
 }
-
+.error {
+    color: red;
+    font-size: 0.9em;
+}
 /* Menu */
 
 .menu {
