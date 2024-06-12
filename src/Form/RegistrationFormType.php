@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -42,10 +43,11 @@ class RegistrationFormType extends AbstractType
                     'class' => 'form-label fw-bold'
                 ]
             ])
-            ->add('telephone', IntegerType::class, [
+            ->add('telephone', NumberType::class, [
                 'required' => true,
                 'attr' => [
                     'class' => 'form-control',
+                    'minlength' => '10',
                     'maxlength' => '10'
                 ],
                 'label' => 'Téléphone :',
