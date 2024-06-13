@@ -30,6 +30,10 @@ composer install
 
 ```bash
 yarn install
+
+et
+
+yarn build
 ```
 
 ### 3. Configuration de l'environnement
